@@ -33,7 +33,7 @@ The basic electrical concept of a electrostatic headphone can be seen in Fig. \r
 \section{Required materials}
 \label{s:materials}
 \begin{enumerate}
-    \item 1 mm PCB (for stators and dust protection spacers)
+    \item 1 mm PCB FR-4 and not laminate (for stators and dust protection spacers)
     \item 0.5 mm (or 0.6 mm) PCB (for spacers)
     \item 3 $\mu m$ Mylar (for diaphragm)
     \item 1-2 $\mu m$ Mylar (for dust protection, 1 $\mu m$ too thin maybe as very fragile) %AM-TODO
@@ -43,6 +43,8 @@ The basic electrical concept of a electrostatic headphone can be seen in Fig. \r
     \item Metal rods (headband)
     \item Foam (pads and headband)
 \end{enumerate}
+
+\url{http://www.ebay.com/itm/Electrostatic-Speaker-Membrane-Dupont-Mylar-C-3um-40M-/172275024448?_trksid=p2141725.m3641.l6368&rmvSB=true} -> Mylar source
 
 For the amplifier:
 \begin{enumerate}
@@ -54,15 +56,15 @@ For the amplifier:
 
 \subsection{Design of the stators and spacers}
 \label{s:driver:design}
-Radius of the holes should not be larger than the distance from stator to spacer. The holes in the stator should not cover the whole stator. Instead there should be a perimeter that acts as an air damper and avoids resonance frequencies in the upper midrange or lower treble. The size of the diaphragm is quite important as low frequencies require a large diaphragm surface. The active area should have a diameter of about 80 mm. The ratio of spacer thickness to diaphragm width should not be larger than 1:120 to avoid contact between stator and diaphragm. Lowering the bias voltage can help with very large ratios. Open area of the stators should be around 40\% in order to avoid issues with stability of the stator.
+Radius of the holes (2mm) should not be larger than the distance from stator to spacer. The holes in the stator should not cover the whole stator. Instead there should be a perimeter that acts as an air damper and avoids resonance frequencies in the upper midrange or lower treble. The size of the diaphragm is quite important as low frequencies require a large diaphragm surface. The active area should have a diameter of about 80 mm. The ratio of spacer thickness to diaphragm width should not be larger than 1:120 to avoid contact between stator and diaphragm. Lowering the bias voltage can help with very large ratios. Open area of the stators should be around 40\% in order to avoid issues with stability of the stator.
 
 In order to protect the diaphragm a dust and sweat protection needs to be used. This dust cover will be made from crumpled Mylar and will be located on the same side as the coating of diaphragm.
 
-\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/660#post_8897170} -> Design pictures of the Orpheus clones; apparently this design lacks some bass punch, maybe increase non-holed perimeter for improvements?
+\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/660#post_8897170} -> Design pictures of the Orpheus clones; apparently this design lacks some bass punch, maybe increase non-holed perimeter for improvements? Later on it is proposed to decrease the width a bit to improve stability. This would yield the dimensions of 110 x 74 mm.
 
 \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1155#post_10142154} -> potential improvement of stability by making a hole in the center of the stators (one additional advantage: it's easier to detect issues with the diaphragm as it can be examined visually)
 
-The edges of the spacers need to be sanded down a bit in order to avoid copper dust on the sides and spurious electrical contacts.
+The edges of the spacers need to be sanded down a bit in order to avoid copper dust on the sides and spurious electrical contacts. Holes should be de-burred from copper.
 
 \subsection{Etching the stators}
 \label{s:driver:etching}
@@ -110,7 +112,7 @@ As Mylar is not conductive an additional coating is required so that it can be c
     \item Licron antistatic spray
     \item Swash Floor cleaner
 \end{enumerate}
-Coating is achieved by applying a small drop of Staticide onto the diaphragm and then spreading it with a sponge.
+Coating is achieved by applying a small drop of Staticide onto the diaphragm and then spreading it with a sponge or microfibre cloth (lint free!). After it dries clean wipe the surface again with a dry lint free cloth.
 
 Thread about coating: \url{http://www.diyaudio.com/forums/planars-exotics/109789-esl-diaphragm-coating.html}
 
@@ -118,7 +120,7 @@ Is this Staticide a gel?
 
 \subsection{Assembly}
 \label{s:driver:assembly}
-Synthetic rubber glue (contact cement, UHU POR?) is used to glue the diaphragm to the spacers. The dust protection screen must also be placed on some spacers (1mm thickness PCB) and must not be in contact with the stators. 2 $\mu m$ Mylar is crumpled and then stretched somewhat so that it doesn't touch the stators when on the spacer. This yields an ideal acoustically transparent material for dust protection. Normally, no dust cover is used on the outside. As no sweat protection is required on this side a very fine cloth could be used if needed. Only one spacer is glued to the diaphragm. This spacer will be the one facing the outside. The spacer on the inside will have the copper side in contact with the coated diaphragm and will be the one with the electrical contact to the DC bias voltage.
+Synthetic rubber glue (contact cement, UHU POR?, UHU Kontakt Kraftkleber fl\"ussig) is used to glue the diaphragm to the spacers. The dust protection screen must also be placed on some spacers (1mm thickness PCB) and must not be in contact with the stators. 2 $\mu m$ Mylar is crumpled and then stretched somewhat so that it doesn't touch the stators when on the spacer. This yields an ideal acoustically transparent material for dust protection. Normally, no dust cover is used on the outside. As no sweat protection is required on this side a very fine cloth could be used if needed. Only one spacer is glued to the diaphragm. This spacer will be the one facing the outside. The spacer on the inside will have the copper side in contact with the coated diaphragm and will be the one with the electrical contact to the DC bias voltage.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=0.5\textwidth]{images/arrangement.png}
@@ -138,7 +140,7 @@ The driver can be tested by hooking it up to the amp and leave it as is for 3 to
     \item What is used to coat the diaphragm? Coating is done with a wet sponge maybe.
     \item How much does the Mylar need to be stretched ($< 1\%$)? About 0.5 \% seems reasonable
     \item How to do accurate etching and what chemicals should be used? FeCl or HCl are options
-    \item How can the surface resistance of the diaphragm be measures? Simply measure at opposite sides? Check multimeter capabilities as it might not be able to measure resistance in the GOhm range. Try to find alternative ways of measuring resistance if that is the case. Resistance should be around 10 - 100 MOhm per square (cm ?)
+    \item How can the surface resistance of the diaphragm be measures? Simply measure at opposite sides? Check multimeter capabilities as it might not be able to measure resistance in the GOhm range. Try to find alternative ways of measuring resistance if that is the case. Resistance should be around 10 - 100 MOhm per square (cm ?). \url{https://dannyelectronics.wordpress.com/2016/01/28/the-nano-ammeter-you-already-have/} shows a way to measure small currents
 \end{enumerate}
 
 \subsection{Potential improvements}
@@ -156,6 +158,8 @@ Wooden enclosures are potentially problematic as they can attract moisture which
 
 \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/675#post_8943826}
 
+Headband can be made out of a metal ruler and then covered with leather \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/2385#post_13037825}.
+
 \section{Building the earpads}
 The earpads should be thick enough so that the bass is powerful and deep enough.
 \label{s:pads}
@@ -169,7 +173,7 @@ Post on ear pads: \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-head
 
 \section{Assembly}
 \label{s:assembly}
-Cables should be doubly insulated to withstand the high voltage. DIN plugs are used by many for electrostatic headphones but it might not be safe due to the high voltages, same for XLR.
+Cables should be doubly insulated to withstand the high voltage. DIN plugs are used by many for electrostatic headphones but it might not be safe due to the high voltages, same for XLR. Ribbon cables rated for high voltages are recommended.
 
 \subsection{TODO}
 \begin{enumerate}
@@ -194,9 +198,11 @@ Check if it is possible to add a voltage regulator to try out different bias vol
 
 Amp safety: \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1455#post_10705917} and \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1470#post_10706261}
 
-Check design in article \cite{ww_1979}.
+Check design in article \cite{ww_1979} and \cite{verwaal_2011}.
 
 Turn ratio should be at least around 1:40.
+
+\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/2415#post_13059527} pdf with some links and amp designs
 
 \section{Measurements}
 \label{s:measurements}
