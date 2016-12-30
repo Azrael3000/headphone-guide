@@ -16,7 +16,7 @@
 \label{s:intro}
 The following document will describe the journey on how to construct your own electrostatic headphones starting with zero, zilch, nada, niente and nichts. In Section \ref{s:tools} we will list the tools required for the building process, which will be followed by a list of materials in Section \ref{s:materials}. The actual construction process is split into five parts, the building of the driver (Section \ref{s:driver}), enclosure (Section \ref{s:driver}), headband (Section \ref{s:headband}) and earpads (Section \ref{s:pads}) with a final assembly in Section \ref{s:assembly}. Finally, the last two chapters will deal with measurements (Section \ref{s:measurements}) and things that we would do differently for the second pair (Section \ref{s:future}).
 
-The whole construction is based on the Head-Fi.org thread \cite{head-fi-diy-thread}, with different and more detailed sources (e.g. \cite{electrostatic-hp-design}, \cite{tcengineering-electrostatic-drivers}) given in the respective sections.
+The whole construction is based on the Head-Fi.org thread \cite{head-fi-diy-thread}, with different and more detailed sources (\cite{electrostatic-hp-design,tcengineering-electrostatic-drivers,ww_1979}) given in the respective sections.
 
 \begin{figure}[htb]
     \centering
@@ -54,7 +54,7 @@ For the amplifier:
 
 \subsection{Design of the stators and spacers}
 \label{s:driver:design}
-Radius of the holes should not be larger than the distance from stator to spacer. The holes in the stator should not cover the whole stator. Instead there should be a perimeter that acts as an air damper and avoids resonance frequencies in the upper midrange or lower treble. The size of the diaphragm is quite important as low frequencies require a large diaphragm surface. The active area should have a diameter of about 80 mm. The ratio of spacer thickness to diaphragm width should not be larger than 1:120 to avoid contact between stator and diaphragm. Lowering the bias voltage can help with very large ratios.
+Radius of the holes should not be larger than the distance from stator to spacer. The holes in the stator should not cover the whole stator. Instead there should be a perimeter that acts as an air damper and avoids resonance frequencies in the upper midrange or lower treble. The size of the diaphragm is quite important as low frequencies require a large diaphragm surface. The active area should have a diameter of about 80 mm. The ratio of spacer thickness to diaphragm width should not be larger than 1:120 to avoid contact between stator and diaphragm. Lowering the bias voltage can help with very large ratios. Open area of the stators should be around 40\% in order to avoid issues with stability of the stator.
 
 In order to protect the diaphragm a dust and sweat protection needs to be used. This dust cover will be made from crumpled Mylar and will be located on the same side as the coating of diaphragm.
 
@@ -70,7 +70,7 @@ Etching the PCB board ensures that electrical contacts are only where they absol
 
 \subsection{Tensioning the Mylar diaphragm}
 \label{s:driver:tension}
-Mylar with 3 $\mu m$ thickness is used to create the diaphragm. Thinner Mylar will cause a lack of bass, while thicker one will cause problem in treble and mids.
+Mylar with 3 $\mu m$ thickness is used to create the diaphragm. Thinner Mylar will cause a lack of bass, while thicker one will cause problem in treble and mids. The tensioning should be high enough as otherwise the diaphragm will collapse onto a stator but also low enough in order to not reduced the bass.
 Different ways of tensioning the Mylar:
 \begin{enumerate}
     \item With weights on the side
@@ -99,7 +99,9 @@ Make sure the diaphragm is very well glued to the stator. The contact cement is 
 
 After glueing the Mylar onto the spacers knock them on the side of a table to check that the sound of both diaphragms is similar. If not, a hot air gun can be used to tension the one with a looser sound.
 
-Tension is sufficient if wrinkles on the Mylar vanish during the procedure. The two diaphragms need to be glued on the same mylar film so that the tension is the same on both sides.
+Tension is sufficient if wrinkles on the Mylar vanish during the procedure, corresponding to about 0.5\% of displacement. The two diaphragms need to be glued on the same mylar film so that the tension is the same on both sides.
+
+\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1770#post_11440100} idea on how to identify the correct tension of the diaphragm by checking the free-air resonance frequency (should be between 100 and 200 Hz) using a white noise generator on one side and a microphone on the other.
 
 \subsection{Coating the diaphragm}
 As Mylar is not conductive an additional coating is required so that it can be charged. It basically should act as if it was a capacitor, so a coating that is conductive and has a high resistivity is ideal. Coating agents are:
@@ -116,7 +118,7 @@ Is this Staticide a gel?
 
 \subsection{Assembly}
 \label{s:driver:assembly}
-Synthetic rubber glue (contact cement) is used to glue the diaphragm to the spacers. The dust protection screen must also be placed on some spacers (1mm thickness PCB) and must not be in contact with the stators. 2 $\mu m$ Mylar is crumpled and then stretched somewhat so that it doesn't touch the stators when on the spacer. This yields an ideal acoustically transparent material for dust protection. Normally, no dust cover is used on the outside. As no sweat protection is required on this side a very fine cloth could be used if needed. Only one spacer is glued to the diaphragm. This spacer will be the one facing the outside. The spacer on the inside will have the copper side in contact with the coated diaphragm and will be the one with the electrical contact to the DC bias voltage.
+Synthetic rubber glue (contact cement, UHU POR?) is used to glue the diaphragm to the spacers. The dust protection screen must also be placed on some spacers (1mm thickness PCB) and must not be in contact with the stators. 2 $\mu m$ Mylar is crumpled and then stretched somewhat so that it doesn't touch the stators when on the spacer. This yields an ideal acoustically transparent material for dust protection. Normally, no dust cover is used on the outside. As no sweat protection is required on this side a very fine cloth could be used if needed. Only one spacer is glued to the diaphragm. This spacer will be the one facing the outside. The spacer on the inside will have the copper side in contact with the coated diaphragm and will be the one with the electrical contact to the DC bias voltage.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=0.5\textwidth]{images/arrangement.png}
@@ -126,7 +128,7 @@ Synthetic rubber glue (contact cement) is used to glue the diaphragm to the spac
 
 Plastic screws are used to assemble the driver unit.
 
-Adhesive tape and pressurized air can be used to clean the dust of the diaphragm and stators. A magnifying glass should be used for checking cleanliness.
+Adhesive tape (masking tape) and pressurized air can be used to clean the dust of the diaphragm and stators. A magnifying glass should be used for checking cleanliness.
 
 The driver can be tested by hooking it up to the amp and leave it as is for 3 to 4 hours without playing any music. The diaphragm should not be sucked to one side during this.
 
@@ -136,7 +138,7 @@ The driver can be tested by hooking it up to the amp and leave it as is for 3 to
     \item What is used to coat the diaphragm? Coating is done with a wet sponge maybe.
     \item How much does the Mylar need to be stretched ($< 1\%$)? About 0.5 \% seems reasonable
     \item How to do accurate etching and what chemicals should be used? FeCl or HCl are options
-    \item How can the surface resistance of the diaphragm be measures? Simply measure at opposite sides? Check multimeter capabilities as it might not be able to measure resistance in the GOhm range. Try to find alternative ways of measuring resistance if that is the case.
+    \item How can the surface resistance of the diaphragm be measures? Simply measure at opposite sides? Check multimeter capabilities as it might not be able to measure resistance in the GOhm range. Try to find alternative ways of measuring resistance if that is the case. Resistance should be around 10 - 100 MOhm per square (cm ?)
 \end{enumerate}
 
 \subsection{Potential improvements}
@@ -191,6 +193,10 @@ Other amplifier and transformer designs can be found here: \url{https://jazzman-
 Check if it is possible to add a voltage regulator to try out different bias voltages easily \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1560#post_10959595}.
 
 Amp safety: \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1455#post_10705917} and \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1470#post_10706261}
+
+Check design in article \cite{ww_1979}.
+
+Turn ratio should be at least around 1:40.
 
 \section{Measurements}
 \label{s:measurements}
