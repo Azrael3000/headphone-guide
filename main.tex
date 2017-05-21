@@ -58,19 +58,25 @@ For the amplifier:
 
 \subsection{Design of the stators and spacers}
 \label{s:driver:design}
-Radius of the holes (2mm) should not be larger than the distance from stator to spacer. The holes in the stator should not cover the whole stator. Instead there should be a perimeter that acts as an air damper and avoids resonance frequencies in the upper midrange or lower treble. The size of the diaphragm is quite important as low frequencies require a large diaphragm surface. The active area should have a diameter of about 80 mm. The ratio of spacer thickness to diaphragm width should not be larger than 1:120 to avoid contact between stator and diaphragm. Lowering the bias voltage can help with very large ratios. Open area of the stators should be around 40\% in order to avoid issues with stability of the stator.
+Diameter of the holes (2mm) should not be larger than the distance from stator to spacer. The holes in the stator should not cover the whole stator. Instead there should be a perimeter that acts as an air damper and avoids resonance frequencies in the upper midrange or lower treble. The size of the diaphragm is quite important as low frequencies require a large diaphragm surface. The active area should have a diameter of about 80 mm. The ratio of spacer thickness to diaphragm width should not be larger than 1:120 to avoid contact between stator and diaphragm. Lowering the bias voltage can help with very large ratios. Open area of the stators should be around 40\% in order to avoid issues with stability of the stator.
+
+When drilling holes on the stator the feed rate should be at around 3600 mm/min.  For routing and cutting, it should be slowed down to around 1800 - 2400 mm/min.
 
 In order to protect the diaphragm a dust and sweat protection needs to be used. This dust cover will be made from crumpled Mylar and will be located on the same side as the coating of diaphragm.
 
-\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/660#post_8897170} -> Design pictures of the Orpheus clones; apparently this design lacks some bass punch, maybe increase non-holed perimeter for improvements? Later on it is proposed to decrease the width a bit to improve stability. This would yield the dimensions of 110 x 74 mm.
+\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/660#post_8897170} -> Design pictures of the Orpheus clones; apparently this design lacks some bass punch, maybe increase non-holed perimeter for improvements? Later on it is proposed to decrease the width a bit to improve stability. This would yield the dimensions of 110 x 74 mm (open area of 104 x 74 mm of orpheus clone).
 
 \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1155#post_10142154} -> potential improvement of stability by making a hole in the center of the stators (one additional advantage: it's easier to detect issues with the diaphragm as it can be examined visually)
 
 The edges of the spacers need to be sanded down a bit in order to avoid copper dust on the sides and spurious electrical contacts. Holes should be de-burred from copper.
 
+\subsubsection{Gcode creation}
+\label{s:driver:design:gcode}
+In Linux Heekscnc can be used to create the gcode. Salome to do the CAD design. Inner ellipse: 55 x 37, outer: 65 x 47. Radius of holes: 1mm, multiplicator: 39 in x and 26 in y direction with distance 0.8421 and 0.88 in those directions, respectively.
+
 \subsection{Etching the stators}
 \label{s:driver:etching}
-Etching the PCB board ensures that electrical contacts are only where they absolutely need to be. Furthermore, having less copper surface will result in a reduced capacitance and they will be easier to drive because of that. Toner transfer can be used to define the areas that should not be etched. After etching the stators can be protected by spraying thin layers of Acrylic paint on the copper (flat not glossy paint). This insulation avoids degradation of the copper surface and potential shorts when dust is present between the diaphragm and the stators. A small are needs to be left open so that wires can be soldered onto the stators.
+Etching the PCB board ensures that electrical contacts are only where they absolutely need to be. Furthermore, having less copper surface will result in a reduced capacitance and they will be easier to drive because of that. Toner transfer can be used to define the areas that should not be etched. After etching the stators can be protected by spraying thin layers of Acrylic paint on the copper (flat not glossy paint). This insulation avoids degradation of the copper surface and potential shorts when dust is present between the diaphragm and the stators. A small area needs to be left open so that wires can be soldered onto the stators.
 
 \url{https://www.youtube.com/watch?v=jvCfgyWIpLI} -> youtube video to explain etching (3 parts)
 
