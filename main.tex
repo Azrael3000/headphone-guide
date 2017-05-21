@@ -74,6 +74,25 @@ The edges of the spacers need to be sanded down a bit in order to avoid copper d
 \label{s:driver:design:gcode}
 In Linux Heekscnc can be used to create the gcode. Salome to do the CAD design. Inner ellipse: 55 x 37, outer: 65 x 47. Radius of holes: 1mm, multiplicator: 39 in x and 26 in y direction with distance 0.8421 and 0.88 in those directions, respectively.
 
+Current setup:
+
+\begin{itemize}
+    \item FreeCad to make the designs -> export as svg
+    \item Inkscape to place the svgs correctly \& create stator holes -> export as svg
+    \item Makercam.com to create gcode.
+\end{itemize}
+
+CNC Drills:
+
+\begin{itemize}
+    \item 2mm drill for pcb
+    \item 2mm end mill for pcb (coated)
+    \item 6mm drill for wood 2-flute
+    \item 2mm drill for wood 2-flute
+\end{itemize}
+
+Ordered via cnc-plus.de and sortec.de
+
 \subsection{Etching the stators}
 \label{s:driver:etching}
 Etching the PCB board ensures that electrical contacts are only where they absolutely need to be. Furthermore, having less copper surface will result in a reduced capacitance and they will be easier to drive because of that. Toner transfer can be used to define the areas that should not be etched. After etching the stators can be protected by spraying thin layers of Acrylic paint on the copper (flat not glossy paint). This insulation avoids degradation of the copper surface and potential shorts when dust is present between the diaphragm and the stators. A small area needs to be left open so that wires can be soldered onto the stators.
