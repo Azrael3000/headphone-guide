@@ -70,6 +70,8 @@ In order to protect the diaphragm a dust and sweat protection needs to be used. 
 
 The edges of the spacers need to be sanded down a bit in order to avoid copper dust on the sides and spurious electrical contacts. Holes should be de-burred from copper.
 
+Do not mirror the stators so that the drilling always goes away from the diaphragm (drill pushes small bits of material on the outside) TODO REPHRASE
+
 \subsubsection{Gcode creation}
 \label{s:driver:design:gcode}
 In Linux Heekscnc can be used to create the gcode. Salome to do the CAD design. Inner ellipse: 55 x 37, outer: 65 x 47. Radius of holes: 1mm, multiplicator: 39 in x and 26 in y direction with distance 0.8421 and 0.88 in those directions, respectively.
@@ -97,7 +99,9 @@ Ordered via cnc-plus.de and sortec.de
 \label{s:driver:etching}
 Etching the PCB board ensures that electrical contacts are only where they absolutely need to be. Furthermore, having less copper surface will result in a reduced capacitance and they will be easier to drive because of that. Toner transfer can be used to define the areas that should not be etched. After etching the stators can be protected by spraying thin layers of Acrylic paint on the copper (flat not glossy paint). This insulation avoids degradation of the copper surface and potential shorts when dust is present between the diaphragm and the stators. A small area needs to be left open so that wires can be soldered onto the stators.
 
-\url{https://www.youtube.com/watch?v=jvCfgyWIpLI} -> youtube video to explain etching (3 parts)
+\url{http://www.instructables.com/id/Stop-using-Ferric-Chloride-etchant!--A-better-etc/}
+
+Etching is achieved by using 2 parts Hydrogen Peroxide (3\%) with 1 part Hydrochloric acid (30\%). Most PCBs have a photosensitive coating that needs to be removed for this to work. The etching can be achieved by using a paintbrush to apply the solution to the desired location. The copper will be taken away rather quickly and the solution will turn greenish.
 
 \subsection{Tensioning the Mylar diaphragm}
 \label{s:driver:tension}
@@ -149,7 +153,7 @@ Is this Staticide a gel?
 
 \subsection{Assembly}
 \label{s:driver:assembly}
-Synthetic rubber glue (contact cement, UHU POR?, UHU Kontakt Kraftkleber fl\"ussig) is used to glue the diaphragm to the spacers. The dust protection screen must also be placed on some spacers (1mm thickness PCB) and must not be in contact with the stators. 2 $\mu m$ Mylar is crumpled and then stretched somewhat so that it doesn't touch the stators when on the spacer. This yields an ideal acoustically transparent material for dust protection. Normally, no dust cover is used on the outside. As no sweat protection is required on this side a very fine cloth could be used if needed. Only one spacer is glued to the diaphragm. This spacer will be the one facing the outside. The spacer on the inside will have the copper side in contact with the coated diaphragm and will be the one with the electrical contact to the DC bias voltage.
+Synthetic rubber glue (contact cement, UHU Greenit, alternatives: UHU Por, 3M 4693) is used to glue the diaphragm to the spacers. The dust protection screen must also be placed on some spacers (1mm thickness PCB) and must not be in contact with the stators. 2 $\mu m$ Mylar is crumpled and then stretched somewhat so that it doesn't touch the stators when on the spacer. This yields an ideal acoustically transparent material for dust protection. Normally, no dust cover is used on the outside. As no sweat protection is required on this side a very fine cloth could be used if needed. Only one spacer is glued to the diaphragm. This spacer will be the one facing the outside. The spacer on the inside will have the copper side in contact with the coated diaphragm and will be the one with the electrical contact to the DC bias voltage.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=0.5\textwidth]{images/arrangement.png}
@@ -199,6 +203,8 @@ The earpads should be thick enough so that the bass is powerful and deep enough.
     \item Is it possible to make individual ear pads? Would allow for the use of harder materials. Moving your mouth changes the geometry so one would need to be careful.
 \end{enumerate}
 Post on ear pads: \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/660#post_8930271}. Inner diameter of Orpheus earpads is 45mm x 90mm.
+
+Earpad leather cover is made using a thin synthetic leather. It's made of two parts, one rectangular one with dimension 4 x 32 cm and an eliptic one which is of the same size as the wooden ellipse of the pad plus 1 cm inside and 3 cm on the outside. The rectangular patch is sewn on the inside of the ellipse and then it's wrapped over the foam and the wooden pad connector. Don't forget to put on the waschers before glueing the leather to the wood.
 
 \section{Assembly}
 \label{s:assembly}
