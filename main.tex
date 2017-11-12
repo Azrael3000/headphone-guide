@@ -5,7 +5,7 @@
 \usepackage[utf8]{inputenc}
 \begin{document}
 \title{Let's build electrostatic headphones}
-\author{Arno Mayrhofer}
+\author{Arno Mayrhofer \and Benedikt Becsi}
 \maketitle
 
 \tableofcontents
@@ -30,20 +30,24 @@ The basic electrical concept of a electrostatic headphone can be seen in Fig. \r
 \section{Required tools}
 \label{s:tools}
 
+To build the drivers it is highly recommended that you have access to a good CNC machine. Since we didn't have one of those standing around, we looked for a so called fablab, i.e. a community led workshop for creative projects. We eventually ended up at the Viennese Metalab which gave us access to a CNC machine and an introduction on how to use it by Sebastian Bachmann, which eased the learning curve significantly. Since we were already using a CNC machine to make the driver we used it also to build the enclosing. An electric drill was used for the assembly screws and headband construction. The earpads were sewn from hand and as such only thread and needle was required for that. The step up transformer that we built to drive the headphones required a basic electronics lab and in particular a soldering station.
+
 \section{Required materials}
 \label{s:materials}
 \url{http://www.head-fi.org/t/826032/electrostatic-ear-speaker-diyers-suppliers-list}-> Suppliers list
 \begin{enumerate}
     \item 1 mm PCB FR-4 and not laminate (for stators and dust protection spacers)
-    \item 0.5 mm (or 0.6 mm) PCB (for spacers)
+    \item 0.5 mm PCB (for spacers)
     \item 3 $\mu m$ Mylar (for diaphragm)
-    \item 1-2 $\mu m$ Mylar (for dust protection, 1 $\mu m$ too thin maybe as very fragile) %AM-TODO
-    \item \ldots (for coating the diaphragm) %AM-TODO
+    \item 1 $\mu m$ Mylar (for dust protection)
+    \item Anti-static monitor cleaner for diaphragm coating
     \item Acrylic spray for insulating the stators
-    \item Sheep skin leather (headband and pads)
-    \item Wood (enclosure)
-    \item Metal rods (headband)
-    \item Foam (pads and headband)
+    \item Thin and stretchy artificial leather for the earpads and headband
+    \item Wood (enclosure and headband, we used lime and spruce)
+    \item Metal rods (3mm welding rods) (headband)
+    \item 3cm foam (pads and headband)
+    \item Cable plus connectors
+    \item Screws for the assembly
 \end{enumerate}
 
 \url{http://www.ebay.com/itm/Electrostatic-Speaker-Membrane-Dupont-Mylar-C-3um-40M-/172275024448?_trksid=p2141725.m3641.l6368&rmvSB=true} -> Mylar source
@@ -74,7 +78,7 @@ Do not mirror the stators so that the drilling always goes away from the diaphra
 
 \subsubsection{Gcode creation}
 \label{s:driver:design:gcode}
-In Linux Heekscnc can be used to create the gcode. Salome to do the CAD design. Inner ellipse: 55 x 37, outer: 65 x 47. Radius of holes: 1mm, multiplicator: 39 in x and 26 in y direction with distance 0.8421 and 0.88 in those directions, respectively.
+Inner ellipse: 55 x 37, outer: 65 x 47. Radius of holes: 1mm, multiplicator: 39 in x and 26 in y direction with distance 0.8421 and 0.88 in those directions, respectively.
 
 Current setup:
 
@@ -88,12 +92,12 @@ CNC Drills:
 
 \begin{itemize}
     \item 2mm drill for pcb
-    \item 2mm end mill for pcb (coated)
+    \item 2mm end mill for pcb (diamond coated)
     \item 6mm drill for wood 2-flute
     \item 2mm drill for wood 2-flute
 \end{itemize}
 
-Ordered via cnc-plus.de and sortec.de
+Ordered via \url{www.cnc-plus.de} and \url{www.sortec.de}.
 
 \subsection{Etching the stators}
 \label{s:driver:etching}
@@ -194,27 +198,48 @@ Wooden enclosures are potentially problematic as they can attract moisture which
 Headband can be made out of a metal ruler and then covered with leather \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/2385#post_13037825}.
 
 \section{Building the earpads}
-The earpads should be thick enough so that the bass is powerful and deep enough.
 \label{s:pads}
-\subsection{Potential improvements}
-\begin{enumerate}
-    \item Material should be leather on the inside. Sennheiser HE60/90 has fabric in contact with head, leather everywhere else. This makes it more comfortable
-    \item It might be worth having harder foam on the inside as it will reduce resonances. Obviously this needs to be balanced to ensure comfort.
-    \item Is it possible to make individual ear pads? Would allow for the use of harder materials. Moving your mouth changes the geometry so one would need to be careful.
-\end{enumerate}
-Post on ear pads: \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/660#post_8930271}. Inner diameter of Orpheus earpads is 45mm x 90mm.
+The earpads should be thick enough so that the bass is powerful and deep enough.
+\begin{figure}
+\centering
+\includegraphics[width=0.3\textwidth]{images/earpad.pdf}
+\caption{Earpad cut-through; materials: wood (yellow), foam (grey), screw nut (black), artificial leather (blue), contact cement (green)}
+\label{f:pads:cut}
+\end{figure}
+The earpad is based on a wooden ellipse with 4mm thickness that was also manufactured using the CNC. After we had the full enclosing together we put the front and the back of the enclosing together with this ellipse to drill four holes for the assembly. The screw nuts were glued to the inside of the ellipse using copious amounts of epoxy. A schematic of the earpad can be seen in Fig. \ref{f:pads:cut}. After the glue has hardened (see your glue for the time, for ours it was about 24h) we loosened the screws and disassembled everything. The next step consisted of cutting the same ellipse from acoustic foam with 3cm thickness.
 
-Earpad leather cover is made using a thin synthetic leather. It's made of two parts, one rectangular one with dimension 4 x 32 cm and an eliptic one which is of the same size as the wooden ellipse of the pad plus 1 cm inside and 3 cm on the outside. The rectangular patch is sewn on the inside of the ellipse and then it's wrapped over the foam and the wooden pad connector. Don't forget to put on the waschers before glueing the leather to the wood.
+The leather cover is made from a thin and stretchy synthetic leather. It's made of two parts, a rectangular one with dimension 4 x 32 cm and an elliptic one which is of the same size as the wooden ellipse of the pad plus 1 cm inside and 3 cm on the outside. The rectangular patch is sewn on the inside of the ellipse and then it's wrapped over the foam and the wooden pad connector. The leather is glued to the wood using the contact cement that was also used to glue the diaphragm to the spacers. Finally, we also glued a mesh to the wood so that the ears cannot get in touch with the dust protector.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{images/earpads_final.jpg}
+\caption{Final earpads}
+\label{f:pads:cut}
+\end{figure}
+
+%\subsection{Potential improvements}
+%\begin{enumerate}
+%    \item Material should be leather on the inside. Sennheiser HE60/90 has fabric in contact with head, leather everywhere else. This makes it more comfortable
+%    \item It might be worth having harder foam on the inside as it will reduce resonances. Obviously this needs to be balanced to ensure comfort.
+%    \item Is it possible to make individual ear pads? Would allow for the use of harder materials. Moving your mouth changes the geometry so one would need to be careful.
+%\end{enumerate}
+%Post on ear pads: \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/660#post_8930271}. Inner diameter of Orpheus earpads is 45mm x 90mm.
 
 \section{Assembly}
 \label{s:assembly}
-Cables should be doubly insulated to withstand the high voltage. DIN plugs are used by many for electrostatic headphones but it might not be safe due to the high voltages, same for XLR. Ribbon cables rated for high voltages are recommended.
 
-\subsection{TODO}
-\begin{enumerate}
-    \item Cable building (low capacitance)
-    \item Connector building: need 6 pins ideally (3 for each side, for front and rear stator as well as one for the diaphragm DC voltage)
-\end{enumerate}
+\subsection{Cable}
+The cable that connects the headphone with the step up transformer consists of three about 3m long litz wires ($0.14mm^2$)that were braided together. One side was soldered directly onto the stators and one spacer whereas the other side was fitted with banana plugs to connect the headphones to the transformer.
+
+While this might not be the perfect solution in terms of elegance and signal transmission it was a inexpensive and functional way to make the headphones sing.
+
+Alternatives include replacement cables for KOSS headphones. Apparently an extension cable for the ESP-950 headphone should do the trick. \footnote{\url{https://www.head-fi.org/threads/my-diy-electrostatic-headphones.498292/page-51#post-9325470}}
+
+%Cables should be doubly insulated to withstand the high voltage. DIN plugs are used by many for electrostatic headphones but it might not be safe due to the high voltages, same for XLR. Ribbon cables rated for high voltages are recommended.
+%\begin{enumerate}
+%    \item Cable building (low capacitance)
+%    \item Connector building: need 6 pins ideally (3 for each side, for front and rear stator as well as one for the diaphragm DC voltage)
+%\end{enumerate}
 
 \section{Amplifier}
 \label{s:amp}
@@ -225,19 +250,27 @@ Due to the requirement of a continuously charged diaphragm and the high voltage 
     \caption{Amplifier design by Wachara C.}
     \label{f:amp:wachara}
 \end{figure}
-Discussion on this design: \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/720#post_9182523}. Probably a step up transformer will be enough for starters
+A discussion on this amplifier design can be found on Head-fi.org \footnote{\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/720#post_9182523}}. However, to not make out lives too difficult we decided against building a full amplifier. Instead we opted to construct a step up transformer based on the designs of Charlie Mimbs \footnote{\url{https://jazzman-esl-page.blogspot.co.at/2010/01/update-new-toroidal-step-up.html}}.
 
-Other amplifier and transformer designs can be found here: \url{https://jazzman-esl-page.blogspot.co.at/2010/01/update-new-toroidal-step-up.html}
+A note of warning before we continue with the details. We will be dealing with electronic equipment in the following which can cause serious injury or death so make sure you have a good understanding of what you are doing and follow proper safety procedures.
 
-Check if it is possible to add a voltage regulator to try out different bias voltages easily \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1560#post_10959595}.
+Since we are not building a speaker we opted for a toned down version of Charlie's step up that would only lead to 580 volts at the diaphragm. A circuit diagram can be seen in Fig. \ref{f:amp:step-up} that was copied from circuitjs \footnote{\url{http://lushprojects.com/circuitjs/circuitjs.html}}.
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/step-up-transformer.png}
+    \caption{Step up transformer}
+    \label{f:amp:step-up}
+\end{figure}
 
-Amp safety: \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1455#post_10705917} and \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1470#post_10706261}
-
-Check design in article \cite{ww_1979} and \cite{verwaal_2011}.
-
-Turn ratio should be at least around 1:40.
-
-\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/2415#post_13059527} pdf with some links and amp designs
+%Check if it is possible to add a voltage regulator to try out different bias voltages easily \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1560#post_10959595}.
+%
+%Amp safety: \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1455#post_10705917} and \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1470#post_10706261}
+%
+%Check design in article \cite{ww_1979} and \cite{verwaal_2011}.
+%
+%Turn ratio should be at least around 1:40.
+%
+%\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/2415#post_13059527} pdf with some links and amp designs
 
 \section{Measurements}
 \label{s:measurements}
@@ -247,9 +280,86 @@ Measurements with and without seal should be performed. The latter should give a
 \section{What to do different in the future}
 \label{s:future}
 
+Allow for a little space between enclosing and driver.
+
+Shrink wrapped cable with proper xlr connector.
+
+Earpad made out of three pieces (2 rectangular ones and one ellipse).
+
 \subsection{Closed headphones}
 \label{s:future:closed}
+
 Materials used for damping included felt, wool or other acoustically semi-transparent materials. Some also coat the inside of the enclosure with Bitumen.
+
+\section{Appendix}
+\label{s:app}
+
+\subsection{Circuit diagram for circuitjs}
+\label{s:app:circuit}
+\begin{verbatim}
+$ 13 0.000005 146.80153516788286 47 120 28
+v 448 512 448 352 0 1 50 230 0 1.5707963267948966 0.5
+c 720 352 800 352 0 1e-8 -121.77903323034391
+w 608 512 608 608 0
+w 608 512 768 512 0
+d 768 512 800 352 1 0.805904783
+d 800 352 832 512 1 0.805904783
+d 832 512 880 352 1 0.805904783
+d 880 352 912 512 1 0.805904783
+d 912 512 960 352 1 0.805904783
+d 960 352 1008 512 1 0.805904783
+c 800 352 880 352 0 1e-8 -188.52952984256655
+c 880 352 960 352 0 1e-8 -148.45206709826482
+c 768 512 832 512 0 1e-8 -188.38552969850758
+c 832 512 912 512 0 1e-8 -148.28294550190276
+c 912 512 1008 512 0 1e-8 -133.83898987162684
+r 1008 512 1216 512 0 18000000
+w 1216 512 1264 512 0
+w 608 608 1328 608 0
+v 416 96 416 288 0 1 200 6 0 0 0.5
+T 560 96 656 112 0 4 20 -0.0002165438913044398 0.000008783616360946498 0.999
+T 560 176 656 144 0 4 20 0.00021654389130444608 -0.000008783616360946477 0.999
+T 560 240 656 208 0 4 20 0.00021654389130505795 -0.00000878361636097594 0.999
+T 560 288 656 256 0 4 20 0.00021654389130505323 -0.000008783616360975917 0.999
+w 656 128 656 144 0
+w 656 240 656 256 0
+r 544 96 464 96 0 1
+w 544 96 560 96 0
+w 544 208 560 208 0
+w 544 144 560 144 0
+w 544 208 544 256 0
+w 544 256 560 256 0
+w 544 208 544 144 0
+w 544 144 544 96 0
+w 560 128 528 128 0
+w 528 128 528 176 0
+w 528 176 560 176 0
+w 528 176 528 240 0
+w 528 240 560 240 0
+w 560 288 528 288 0
+w 528 288 528 240 0
+w 416 288 528 288 0
+w 464 96 416 96 0
+w 1328 608 1328 192 0
+w 1328 192 656 192 0
+w 656 208 656 192 0
+w 656 192 656 176 0
+w 656 288 768 288 0
+w 768 288 768 160 0
+w 656 96 768 96 0
+c 768 96 768 160 0 2e-11 -328.31758099807905
+T 608 352 528 192 0 2 1 -4.752600223090209e-16 -0.18138620921599558 0.999
+r 608 352 720 352 0 3900
+w 448 512 528 512 0
+174 448 352 512 352 0 1000 0.5 Resistance
+w 512 352 528 352 0
+o 16 64 0 2083 1280 0.00009765625 0 -1 0
+o 49 64 0 2083 1280 0.0001953125 1 -1 0
+o 51 64 0 2083 5 0.0015625 2 -1 0
+o 1 64 0 2083 320 0.0015625 3 -1 0
+o 3 64 0 2083 640 0.0015625 4 -1 0
+o 54 64 0 2083 640 0.4 5 -1 0
+\end{verbatim}
 
 
 \bibliographystyle{plain}
