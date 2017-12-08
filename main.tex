@@ -30,7 +30,7 @@ The basic electrical concept of a electrostatic headphone can be seen in Fig. \r
 \section{Required tools}
 \label{s:tools}
 
-To build the drivers it is highly recommended that you have access to a good CNC machine. Since we didn't have one of those standing around, we looked for a so called fablab, i.e. a community led workshop for creative projects. We eventually ended up at the Viennese Metalab \footnote{\url{https://metalab.at/}} which gave us access to a heavy duty level CNC machine and an introduction on how to use it by Sebastian Bachmann (\url{https://www.reox.at/}), which eased the learning curve significantly. The principal introduction included instructions on how to set up, start and operate the machine and the control terminal, as well as some GGode basics (the programming language that controls the machine's behaviour - more on that in section \ref{s:driver:design:gcode}). Most importantly, as it can be potentially quite dangerous to operate one of those things, it covered security basics, which is definitely the first starting point for anyone new to CNC. Don't skip your tutorial lessons, kids!
+To build the drivers it is highly recommended that you have access to a good CNC machine. Since we didn't have one of those standing around, we looked for a so called fablab, i.e. a community led workshop for creative projects. We eventually ended up at the Viennese Metalab\footnote{\url{https://metalab.at/}} which gave us access to a heavy duty level CNC machine and an introduction on how to use it by Sebastian Bachmann\footnote{\url{https://www.reox.at/}}, which eased the learning curve significantly. The principal introduction included instructions on how to set up, start and operate the machine and the control terminal, as well as some GGode basics (the programming language that controls the machine's behaviour - more on that in section \ref{s:driver:design:gcode}). Most importantly, as it can be potentially quite dangerous to operate one of those things, it covered security basics, which is definitely the first starting point for anyone new to CNC. Don't skip your tutorial lessons, kids!
 
 Since you might be interested in the budget needed for this, it of course depends on the lab's membership policy - most labs we found had a monthly fee with a minimum subscription period, but we were able to come to an arrangement with a voluntary contribution without binding membership. Most people running those kinds of open creative space are pretty chill, so don't be afraid to ask!
 
@@ -50,23 +50,27 @@ An electric drill was used for the assembly screws and headband construction. Th
 In this section we list all the materials we had to purchase for the headphones and our DIY step-up transformer. We provide you with the links where we bought the materials, but depending on where you live you might find better suppliers yourself.
 
 \begin{enumerate}
-    \item 1 mm PCB FR-4 and not laminate (for stators and dust protection spacers) 
-    \item 0.5 mm PCB (for spacers): \url{https://www.conrad.com/ce/en/product/523630/PCB-material-Photo-coating-positive-single-sided-35-m?ref=list}
-    \item 3 $\mu m$ Mylar (for diaphragm)
+    \item 1 mm PCB FR-4 for stators and dust protection spacers:  \url{https://www.conrad.com/ce/en/product/523656/PCB-material-Photo-coating-positive-single-sided-35-m?ref=list}
+    \item 0.5 mm PCB for spacers: \url{https://www.conrad.com/ce/en/product/523630/PCB-material-Photo-coating-positive-single-sided-35-m?ref=list}
+    \item 3 $\mu m$ Mylar (for diaphragm): \url{https://www.ebay.com/itm/Electrostatic-Speaker-Membrane-Dupont-Mylar-C-3um-40M/172781729300?epid=666335680&hash=item283a97f614:g:jg0AAOSwrklVPe61} (with that, you should have all your mylar needs covered for years to come!)
     \item 1 $\mu m$ Mylar (for dust protection): \url{https://www.freeflightsupplies.co.uk/index.php/products/lightweight-covering-materials}
-    \item Anti-static monitor cleaner for diaphragm coating
-    \item Acrylic spray for insulating the stators
-    \item Thin and stretchy artificial leather for the earpads and headband
-    \item Wood (enclosure and headband, we used lime and spruce)
-    \item Metal rods (3mm welding rods) (headband)
-    \item 3cm foam (pads and headband)
+    \item Anti-static display cleaner for diaphragm coating: \url{https://www.conrad.com/ce/en/product/995207/DataFlash-DF1620-Content-250-ml?ref=searchDetail}
+    \item Acrylic spray for insulating the stators: \url{https://www.conrad.com/ce/en/product/1198455/Acrylic-paint-Revell-Black-matt-08-Spray-can-100?ref=searchDetail}
+    \item Thin and stretchy artificial leather for the earpads and headband (should be available in a textile shop)
+    \item Wood for the enclosure and headband, several boards with 4mm and 10mm thickness; we used lime and spruce
+    \item Metal rods (3mm welding rods) for the headband
+    \item 3 cm acoustic foam (pads and headband)
     \item Cable plus connectors
-    \item Screws for the assembly 
+    \item Screws for the assembly (2,5 x 20 mm)
+    \item Clear varnish or glaze for wood finish
+    \item Two-component glue: \url{https://www.conrad.com/ce/en/product/478703/UHU-Plus-Schnellfest-Two-component-adhesive-45700-35-g?ref=list}
+    \item Contact glue for gluing the membrane to the stators and the earpads: \url{https://www.conrad.com/ce/en/product/631802/UHU-greenit-Contact-adhesive-45401-650-g?ref=searchDetail}
+    
 \end{enumerate}
-\url{http://www.head-fi.org/t/826032/electrostatic-ear-speaker-diyers-suppliers-list}
-\url{http://www.ebay.com/itm/Electrostatic-Speaker-Membrane-Dupont-Mylar-C-3um-40M-/172275024448?_trksid=p2141725.m3641.l6368&rmvSB=true}
-
-For the amplifier:
+Here's a more comprehensive list of material suppliers: \url{http://www.head-fi.org/t/826032/electrostatic-ear-speaker-diyers-suppliers-list}
+\\
+\\
+Materials needed for the amplifier:
 \begin{enumerate}
     \item 4 Audio transformers 6V - 230V (OEP N35A002F) \footnote{\url{https://uk.rs-online.com/web/p/audio-transformers/2106475/}}
     \item 1 Power transformer 230V - 230V (Triad Magnetics FP230-25) \footnote{\url{https://eu.mouser.com/search/ProductDetail.aspx?r=553-FP230-25}}
