@@ -68,7 +68,16 @@ An electric drill was used for the assembly screws and headband construction. Th
 
 For the amplifier:
 \begin{enumerate}
-    \item TODO
+    \item 4 Audio transformers 6V - 230V (OEP N35A002F) \footnote{\url{https://uk.rs-online.com/web/p/audio-transformers/2106475/}}
+    \item 1 Power transformer 230V - 230V (Triad Magnetics FP230-25) \footnote{\url{https://eu.mouser.com/search/ProductDetail.aspx?r=553-FP230-25}}
+    \item 2 1 Ohm wirewound resistors \footnote{\url{https://eu.mouser.com/search/ProductDetail.aspx?r=71-RS0101R000FE73}}
+    \item 6 1kV diodes \footnote{\url{https://eu.mouser.com/search/ProductDetail.aspx?r=625-RGP10M-E3}}
+    \item 2 10 MOhm resistors \footnote{\url{https://eu.mouser.com/search/ProductDetail.aspx?r=594-SFR25H0001005JR5}}
+    \item 6 10 nF capacitors \footnote{\url{https://eu.mouser.com/search/ProductDetail.aspx?r=75-564R30GAS10}}
+    \item 1 3.9 kOhm resistor \footnote{\url{www.aliexpress.com}}
+    \item Power cord plus plug
+    \item Cables
+    \item Test circuit board
 \end{enumerate}
 
 \section{Building the driver}
@@ -269,12 +278,26 @@ A discussion on this amplifier design can be found on Head-fi.org \footnote{\url
 A note of warning before we continue with the details. We will be dealing with electronic equipment in the following which can cause serious injury or death so make sure you have a good understanding of what you are doing and follow proper safety procedures.
 
 Since we are not building a speaker we opted for a toned down version of Charlie's step up that would only lead to 580 volts at the diaphragm. A circuit diagram can be seen in Fig. \ref{f:amp:step-up} that was copied from circuitjs \footnote{\url{http://lushprojects.com/circuitjs/circuitjs.html}}.
+
 \begin{figure}[htb]
     \centering
     \includegraphics[width=0.7\textwidth]{images/step-up-transformer.png}
-    \caption{Step up transformer}
+    \caption{Step up transformer: circuit diagram}
     \label{f:amp:step-up}
 \end{figure}
+
+The final step-up transformer can be seen in Fig. \ref{f:amp:step-up-real}. As can be seen, we did not put it in a nice enclosing and this will also be part of next years project. The step-up transformer is divided in three parts, the blue and yellow part are the transformers for the left and right stators, respectively. Each of these section consists of one 1 Ohm resistor and 2 audio transformers from 6 V to 230 V. The OEP transformers that we used (see Section \ref{s:materials}) were connected on the B-D and 1-4 pins. This yields a 4000k to 95k winding ratio. The two transformers are connected in series and the output side is connected to the step-up part of the transformer as can be seen in Fig. \ref{f:amp:step-up}. Note that in the circuit diagram only one of these stator sections is depicted.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/step-up-real-top.png}
+    \caption{Step up transformer from the top}
+    \label{f:amp:step-up-real}
+\end{figure}
+
+The green part in Fig. \ref{f:amp:step-up-real} corresponds to the lower part in the circuit diagram (Fig. \ref{f:amp:step-up}) and is responsible for converting the 230 V, 50 Hz AC input to a 580 V DC current. The AC input was connected to the Triad power transformer including a 250mA fast blow fuse. On the output side a 3.9 kOhm resister is put before the actual step-up ladder that can be seen in the circuit diagram. This ladder consists of 6 10 nF capacitors and 6 diodes to rectify the AC current. At the end of this ladder a 18 MOhm resistor is put before the connection to the diaphragm is made. Note that we made only one step-up ladder that is connected to both left and right diaphragms.
+
+Note that when operating the headphone its component will be charged and this charge will persist even if power to the transformer has been shut down. It is necessary to discharge all components before disassembly which can be achieved by leaving the power cord connected after shutdown and using the ground connection of the power cord. We hooked up a cable to the ground connection and discharge all outgoing ports by touching them briefly with this cable.
 
 %Check if it is possible to add a voltage regulator to try out different bias voltages easily \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1560#post_10959595}.
 %
@@ -289,7 +312,7 @@ Since we are not building a speaker we opted for a toned down version of Charlie
 \section{Measurements}
 \label{s:measurements}
 
-Measurements with and without seal should be performed. The latter should give a peak at around 200 Hz which is the free-air resonance frequency. This frequency should be lower than 150 Hz for a good bass response.
+As part of the current build we did not perform any measurements and this will become a topic for the future. The head-fi thread suggests to perform measurements with and without seal. The latter should give a peak at around 200 Hz which is the free-air resonance frequency. This frequency should be lower than 150 Hz for a good bass response.
 
 \section{What to do different in the future}
 \label{s:future}
