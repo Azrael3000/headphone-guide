@@ -1,2 +1,11 @@
 hp/*
 images/originals/*
+*.aux
+*.bbl
+*.bbl
+*.blg
+*.log
+guide.pdf
+main.pdf
+*.toc
+*.swp
