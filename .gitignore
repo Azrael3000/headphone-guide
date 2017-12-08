@@ -5,7 +5,6 @@ images/originals/*
 *.bbl
 *.blg
 *.log
-guide.pdf
 main.pdf
 *.toc
 *.swp
