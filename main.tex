@@ -2,6 +2,7 @@
 \usepackage{url}
 \usepackage{fullpage}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage[utf8]{inputenc}
 \begin{document}
 \title{Let's build electrostatic headphones}
@@ -50,12 +51,12 @@ An electric drill was used for the assembly screws and headband construction. Th
 In this section we list all the materials we had to purchase for the headphones and our DIY step-up transformer. We provide you with the links where we bought the materials, but depending on where you live you might find better suppliers yourself.
 
 \begin{enumerate}
-    \item 1 mm PCB FR-4 for stators and dust protection spacers:  \url{https://www.conrad.com/ce/en/product/523656/PCB-material-Photo-coating-positive-single-sided-35-m?ref=list}
-    \item 0.5 mm PCB for spacers: \url{https://www.conrad.com/ce/en/product/523630/PCB-material-Photo-coating-positive-single-sided-35-m?ref=list}
-    \item 3 $\mu m$ Mylar (for diaphragm): \url{https://www.ebay.com/itm/Electrostatic-Speaker-Membrane-Dupont-Mylar-C-3um-40M/172781729300?epid=666335680&hash=item283a97f614:g:jg0AAOSwrklVPe61} (with that, you should have all your mylar needs covered for years to come!)
-    \item 1 $\mu m$ Mylar (for dust protection): \url{https://www.freeflightsupplies.co.uk/index.php/products/lightweight-covering-materials}
-    \item Anti-static display cleaner for diaphragm coating: \url{https://www.conrad.com/ce/en/product/995207/DataFlash-DF1620-Content-250-ml?ref=searchDetail}
-    \item Acrylic spray for insulating the stators: \url{https://www.conrad.com/ce/en/product/1198455/Acrylic-paint-Revell-Black-matt-08-Spray-can-100?ref=searchDetail}
+    \item 1 mm PCB FR-4 for stators and dust protection spacers:  \footnote{\url{https://www.conrad.com/ce/en/product/523656/PCB-material-Photo-coating-positive-single-sided-35-m?ref=list}}
+    \item 0.5 mm PCB for spacers: \footnote{\url{https://www.conrad.com/ce/en/product/523630/PCB-material-Photo-coating-positive-single-sided-35-m?ref=list}}
+    \item 3 $\mu m$ Mylar (for diaphragm): \footnote{\url{https://www.ebay.com/itm/Electrostatic-Speaker-Membrane-Dupont-Mylar-C-3um-40M/172781729300?epid=666335680&hash=item283a97f614:g:jg0AAOSwrklVPe61}} (with that, you should have all your mylar needs covered for years to come!)
+    \item 1 $\mu m$ Mylar (for dust protection): \footnote{\url{https://www.freeflightsupplies.co.uk/index.php/products/lightweight-covering-materials}}
+    \item Anti-static display cleaner for diaphragm coating: \footnote{\url{https://www.conrad.com/ce/en/product/995207/DataFlash-DF1620-Content-250-ml?ref=searchDetail}}
+    \item Acrylic spray for insulating the stators: \footnote{\url{https://www.conrad.com/ce/en/product/1198455/Acrylic-paint-Revell-Black-matt-08-Spray-can-100?ref=searchDetail}}
     \item Thin and stretchy artificial leather for the earpads and headband (should be available in a textile shop)
     \item Wood for the enclosure and headband, several boards with 4mm and 10mm thickness; we used lime and spruce
     \item Metal rods (3mm welding rods) for the headband
@@ -63,9 +64,9 @@ In this section we list all the materials we had to purchase for the headphones 
     \item Cable plus connectors
     \item Screws for the assembly (2,5 x 20 mm)
     \item Clear varnish or glaze for wood finish
-    \item Two-component glue: \url{https://www.conrad.com/ce/en/product/478703/UHU-Plus-Schnellfest-Two-component-adhesive-45700-35-g?ref=list}
-    \item Contact glue for gluing the membrane to the stators and the earpads: \url{https://www.conrad.com/ce/en/product/631802/UHU-greenit-Contact-adhesive-45401-650-g?ref=searchDetail}
-    
+    \item Two-component glue: \footnote{\url{https://www.conrad.com/ce/en/product/478703/UHU-Plus-Schnellfest-Two-component-adhesive-45700-35-g?ref=list}}
+    \item Contact glue for gluing the membrane to the stators and the earpads: \footnote{\url{https://www.conrad.com/ce/en/product/631802/UHU-greenit-Contact-adhesive-45401-650-g?ref=searchDetail}}
+
 \end{enumerate}
 Here's a more comprehensive list of material suppliers: \url{http://www.head-fi.org/t/826032/electrostatic-ear-speaker-diyers-suppliers-list}
 \\
@@ -89,7 +90,41 @@ Materials needed for the amplifier:
 
 \subsection{Design of the stators and spacers}
 \label{s:driver:design}
-Diameter of the holes (2mm) should not be larger than the distance from stator to spacer. The holes in the stator should not cover the whole stator. Instead there should be a perimeter that acts as an air damper and avoids resonance frequencies in the upper midrange or lower treble. The size of the diaphragm is quite important as low frequencies require a large diaphragm surface. The active area should have a diameter of about 80 mm. The ratio of spacer thickness to diaphragm width should not be larger than 1:120 to avoid contact between stator and diaphragm. Lowering the bias voltage can help with very large ratios. Open area of the stators should be around 40\% in order to avoid issues with stability of the stator.
+In the following the stators and spacers will be designed and the designs will be prepared for CNC milling. As the stators and spacers are 2-D, we decided to use Inkscape \footnote{\url{https://www.inkscape.org}} for our design purposes. There are plenty of guides on how to use Inkscape around so we assume that the reader is familiar with it. But in the end we almost exclusively used the basic objects like spheres and ellipses and boolean operators (to be found under the \textit{Path} menu).
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{images/stator.png}
+        \caption{Stator}
+        \label{f:driver:stator}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{images/spacer_front.png}
+        \caption{Front spacer}
+        \label{f:driver:spacer_front}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{images/spacer_back.png}
+        \caption{Back spacer}
+        \label{f:driver:spacer_back}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{images/spacer_dust.png}
+        \caption{Spacer for dust protector}
+        \label{f:driver:spacer_dust}
+    \end{subfigure}
+    \caption{All PCB driver components}
+    \label{f:driver:components}
+\end{figure}
+
+In general the ellipse which contains all driver components is 130 mm high and 94 mm wide. The inner ellipse that determines the active area is 110 mm high and 74 mm wide. The holes drilled into the stator only cover this active area and are laid out such that approximately 40\% of the active area is open, i.e. covered by holes. The distance between the holes is 0.8421 mm in vertical and 0.88 mm in horizontal direction and each hole has a diameter of 2 mm. To generate such a tiled array of holes in Inkscape draw one hole and then use the \textit{Create tiled clones} option that can be found under \textit{Edit - Clone}. The holes outside the active are where removed manually. The resulting stator can be seen in Fig. \ref{f:driver:stator}. A total of four stators need to be milled from 1mm FR4 PCB. The eight cut-outs that are present in each driver component were designed to allow easier screw insertion in the enclosing. It turned out though that we only needed four screws in the end and it would have been possible to work without those cut-outs at all. At the bottom of the components there is a varying number of half-circle cut-outs. These ensure that cables can be connected at other components and provide insulation to the present one. The front and back stator seen in Fig. \ref{f:driver:spacer_front} and Fig. \ref{f:driver:spacer_back} are made from 0.5 mm FR4 PCB. The dust spacer in Fig. \ref{f:driver:spacer_dust} is made from 1 mm PCB. Each stator needs to be produced twice, one for each side.
+
+A few general design guidelines that we found on the head-fi thread indicated the following. The diameter of the holes (2 mm in our case) should not be larger than the distance from stator to spacer. The reason for not having the holes cover the whole stator is that this increases the stability of the stator. A large diaphragm size is quite important as this improves low frequency response. Obviously, if the open area becomes too large then the diaphragm will be too flexible and touch the stators which will cause it to discharge. Because of this the ratio of spacer thickness to diaphragm width should not be larger than 1:120. If this ratio is very large a lower bias voltage can be used to avoid the membrane touching the stators.
+
+All \textit{*.svg} files that are used for the CNC milling can be found in the \textit{resources.zip} which can be found on github.com\footnote{\url{https://github.com/Azrael3000/headphone-guide/raw/master/resoures.zip}}.
+
+%Diameter of the holes (2mm) should not be larger than the distance from stator to spacer. The holes in the stator should not cover the whole stator. Instead there should be a perimeter that acts as an air damper and avoids resonance frequencies in the upper midrange or lower treble. The size of the diaphragm is quite important as low frequencies require a large diaphragm surface. The active area should have a diameter of about 80 mm. The ratio of spacer thickness to diaphragm width should not be larger than 1:120 to avoid contact between stator and diaphragm. Lowering the bias voltage can help with very large ratios. Open area of the stators should be around 40\% in order to avoid issues with stability of the stator.
 
 When drilling holes on the stator the feed rate should be at around 3600 mm/min.  For routing and cutting, it should be slowed down to around 1800 - 2400 mm/min.
 
@@ -340,6 +375,7 @@ This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 Intern
 
 \subsection{Circuit diagram for circuitjs}
 \label{s:app:circuit}
+This file can also be found in the resources.zip file which can be found on github.com \footnote{\url{https://github.com/Azrael3000/headphone-guide/raw/master/resoures.zip}}.
 \begin{verbatim}
 $ 13 0.000005 146.80153516788286 47 120 28
 v 448 512 448 352 0 1 50 230 0 1.5707963267948966 0.5
