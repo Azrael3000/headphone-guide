@@ -40,7 +40,7 @@ If you can't find a place or plan to work on more DIY-projects in the future, it
 \url{http://www.makerdreams.it/}\\
 \url{https://www.sorotec.de/shop/}\\
 \\
-Also, some labs require you to buy the wearout parts yourself. You can get CNC parts here:\\
+Also, some labs require you to buy the wearout parts yourself. You can get CNC tools here:\\
 \url{http://cnc-plus.de/}\\
 \url{https://www.sorotec.de/shop/}\\
 \\
@@ -118,7 +118,7 @@ In the following the stators and spacers will be designed and the designs will b
     \label{f:driver:components}
 \end{figure}
 
-In general the ellipse which contains all driver components is 130 mm high and 94 mm wide. The inner ellipse that determines the active area is 110 mm high and 74 mm wide. The holes drilled into the stator only cover this active area and are laid out such that approximately 40\% of the active area is open, i.e. covered by holes. The distance between the holes is 0.8421 mm in vertical and 0.88 mm in horizontal direction and each hole has a diameter of 2 mm. To generate such a tiled array of holes in Inkscape draw one hole and then use the \textit{Create tiled clones} option that can be found under \textit{Edit - Clone}. The holes outside the active are where removed manually. The resulting stator can be seen in Fig. \ref{f:driver:stator}. A total of four stators need to be milled from 1mm FR4 PCB. The eight cut-outs that are present in each driver component were designed to allow easier screw insertion in the enclosing. It turned out though that we only needed four screws in the end and it would have been possible to work without those cut-outs at all. At the bottom of the components there is a varying number of half-circle cut-outs. These ensure that cables can be connected at other components and provide insulation to the present one. The front and back stator seen in Fig. \ref{f:driver:spacer_front} and Fig. \ref{f:driver:spacer_back} are made from 0.5 mm FR4 PCB. The dust spacer in Fig. \ref{f:driver:spacer_dust} is made from 1 mm PCB. Each stator needs to be produced twice, one for each side.
+In general the ellipse which contains all driver components is 130 mm high and 94 mm wide. The inner ellipse that determines the active area is 110 mm high and 74 mm wide. The holes drilled into the stator only cover this active area and are laid out such that approximately 40\% of the active area is open, i.e. covered by holes. The distance between the holes is 0.8421 mm in vertical and 0.88 mm in horizontal direction and each hole has a diameter of 2 mm. To generate such a tiled array of holes in Inkscape draw one hole and then use the \textit{Create tiled clones} option that can be found under \textit{Edit - Clone}. The holes outside the active are where removed manually. The resulting stator can be seen in Fig. \ref{f:driver:stator}. A total of four stators need to be milled from 1mm FR4 PCB. The eight cut-outs that are present in each driver component were designed to allow easier screw insertion in the enclosing. It turned out though that we only needed four screws in the end and it would have been possible to work without those cut-outs at all. At the bottom of the components there is a varying number of half-circle cut-outs. These ensure that cables can be connected at other components and provide insulation to the present one. The front and back stator seen in Fig. \ref{f:driver:spacer_front} and Fig. \ref{f:driver:spacer_back} are made from 0.5 mm FR4 PCB. The dust spacer in Fig. \ref{f:driver:spacer_dust} is made from 1 mm PCB. Each spacer needs to be produced twice, one for each side.
 
 A few general design guidelines that we found on the head-fi thread indicated the following. The diameter of the holes (2 mm in our case) should not be larger than the distance from stator to spacer. The reason for not having the holes cover the whole stator is that this increases the stability of the stator. A large diaphragm size is quite important as this improves low frequency response. Obviously, if the open area becomes too large then the diaphragm will be too flexible and touch the stators which will cause it to discharge. Because of this the ratio of spacer thickness to diaphragm width should not be larger than 1:120. If this ratio is very large a lower bias voltage can be used to avoid the membrane touching the stators.
 
@@ -126,40 +126,91 @@ All \textit{*.svg} files that are used for the CNC milling can be found in the \
 
 %Diameter of the holes (2mm) should not be larger than the distance from stator to spacer. The holes in the stator should not cover the whole stator. Instead there should be a perimeter that acts as an air damper and avoids resonance frequencies in the upper midrange or lower treble. The size of the diaphragm is quite important as low frequencies require a large diaphragm surface. The active area should have a diameter of about 80 mm. The ratio of spacer thickness to diaphragm width should not be larger than 1:120 to avoid contact between stator and diaphragm. Lowering the bias voltage can help with very large ratios. Open area of the stators should be around 40\% in order to avoid issues with stability of the stator.
 
-When drilling holes on the stator the feed rate should be at around 3600 mm/min.  For routing and cutting, it should be slowed down to around 1800 - 2400 mm/min.
-
-In order to protect the diaphragm a dust and sweat protection needs to be used. This dust cover will be made from crumpled Mylar and will be located on the same side as the coating of diaphragm.
-
-\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/660#post_8897170} -> Design pictures of the Orpheus clones; apparently this design lacks some bass punch, maybe increase non-holed perimeter for improvements? Later on it is proposed to decrease the width a bit to improve stability. This would yield the dimensions of 110 x 74 mm (open area of 104 x 74 mm of orpheus clone).
-
-\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1155#post_10142154} -> potential improvement of stability by making a hole in the center of the stators (one additional advantage: it's easier to detect issues with the diaphragm as it can be examined visually)
-
-The edges of the spacers need to be sanded down a bit in order to avoid copper dust on the sides and spurious electrical contacts. Holes should be de-burred from copper.
-
-Do not mirror the stators so that the drilling always goes away from the diaphragm (drill pushes small bits of material on the outside) TODO REPHRASE
+%When drilling holes on the stator the feed rate should be at around 3600 mm/min.  For routing and cutting, it should be slowed down to around 1800 - 2400 mm/min.
+%
+%In order to protect the diaphragm a dust and sweat protection needs to be used. This dust cover will be made from crumpled Mylar and will be located on the same side as the coating of diaphragm.
+%
+%\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/660#post_8897170} -> Design pictures of the Orpheus clones; apparently this design lacks some bass punch, maybe increase non-holed perimeter for improvements? Later on it is proposed to decrease the width a bit to improve stability. This would yield the dimensions of 110 x 74 mm (open area of 104 x 74 mm of orpheus clone).
+%
+%\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1155#post_10142154} -> potential improvement of stability by making a hole in the center of the stators (one additional advantage: it's easier to detect issues with the diaphragm as it can be examined visually)
+%
+%The edges of the spacers need to be sanded down a bit in order to avoid copper dust on the sides and spurious electrical contacts. Holes should be de-burred from copper.
+%
+%Do not mirror the stators so that the drilling always goes away from the diaphragm (drill pushes small bits of material on the outside) TODO REPHRASE
+%
+%Inner ellipse: 55 x 37, outer: 65 x 47. Radius of holes: 1mm, multiplicator: 39 in x and 26 in y direction with distance 0.8421 and 0.88 in those directions, respectively.
 
 \subsubsection{Gcode creation}
 \label{s:driver:design:gcode}
-Inner ellipse: 55 x 37, outer: 65 x 47. Radius of holes: 1mm, multiplicator: 39 in x and 26 in y direction with distance 0.8421 and 0.88 in those directions, respectively.
 
-Current setup:
+After creating the \textit{*.svgs} with the outline of all shapes the next step is to produce Gcode, i.e. the instructions for the CNC machine that can be understood by it. Note that we were using a CNC machine that was using LinuxCNC and it pretty much understood the Gcode produced by the tool presented in the following. The first important step is to create a milling strategy. For all FR4 parts (stators and spacers) we decided to use double sided tape to glue the FR4 boards to a flat piece of scrap wood. This means that all paths will be cut 0.2mm deeper than the FR4 thickness. This ensures that the milling is deep enough and only leaves some scratches on the scrap wood.
 
-\begin{itemize}
-    \item FreeCad to make the designs -> export as svg
-    \item Inkscape to place the svgs correctly \& create stator holes -> export as svg
-    \item Makercam.com to create gcode.
-\end{itemize}
+Before we start with the Gcode creation we need to decide on which drills and end mills to use. Our choice for the FR4 milling consisted of a 2mm drill and a 2mm diamond coated end mill. The drill is only used for the creation of the stator holes and the end mill is used for everything else. The end mill used in our case would allow us for a vertical feed rate of 300 mm/min and a horizontal feed rate of 1000 mm/min. The spindle speed was set to 24000 rpm.
 
-CNC Drills:
+To create the Gcode from the Inkscape file we use \url{www.makercam.org} which allows a platform independent operation. It's a flash tool which allows for 2.5D designs and does everything we need for the headphone construction.
 
-\begin{itemize}
-    \item 2mm drill for pcb
-    \item 2mm end mill for pcb (diamond coated)
-    \item 6mm drill for wood 2-flute
-    \item 2mm drill for wood 2-flute
-\end{itemize}
+After creating the \textit{*.ngc} file a few manual modifications needed to be made in our case. What is required here exactly depends on your CNC machine so either use your own personal experience or talk to someone who knows the machine you are using to avoid damaging it. In our case we needed to warm up the spindle first starting with 6000 rpm and then increasing it slowly to 24000 rpm. An exemplary Gcode file is listed below where we only took the first few lines of the file as only those need modification.
 
-Ordered via \url{www.cnc-plus.de} and \url{www.sortec.de}.
+\begin{verbatim}
+(Generated by PartKam Version 0.05)
+G21 G90 G40
+(drill 1)
+G0 Z15
+T0 M6
+G17
+M3
+G0 X11.05 Y65
+G1 Z-1.1 F300
+G3 X11.761421319796954 Y53.845177664974614 I87.68274111675127 J0 F1000
+\end{verbatim}
+
+Let us go through this line by line now. The first line is a comment as indicated by the brackets around it. The second line \textit{G21 G90 G40} sets the units to mm relative to the zero position of the part and turns off cutter radius compensation. It is again followed by a comment. Line four then has the first movement command \textit{G0 Z15}. The \textit{G0} indicates that it is a fast move, i.e. a move in the air and not inside the material. It moves the the tip of our tool to a position which is 15mm above 0 at it's current x and y position. Note that in our case the x axis indicated left and right, y front and back and z up and down. You should ensure that you know the movement axes of your machine. The next command \textit{T0 M6} is a tool selector. As our CNC machine did not have the capability to change its tools this irrelevant and will be deleted. The \textit{G17} command sets the working plane to the XY axes. The \textit{M3} command turns on the spindle. Not that it does not indicate a spindle speed so we need to change this. \textit{G0} is a fast movement command, as X and Y positions are specified, no movement in Z direction will happen. Such a movement can be seen in the next line, i.e. the \textit{G1} command. This is a linear movement to the specified, in this case Z position. In contrast to the \textit{G0} command, this movement does not happen at maximum speed but at the specified one, here \textit{F300} specifies 300 mm/min which corresponds to the plunge rate. The \textit{G3} command specifies a circular interpolation and for us indicates the begin of the horizontal movement with a feed rate of 1000 mm/min.
+
+We make some modifications to this file as can be seen below. The first change is that we move the tool to Z5 before starting the spindle. The spindle is then switched on and set to 6000 rpm with the \textit{M3 S6000} command. The following \textit{G4} command indicates a pause which is specified to last 60 seconds in our case. After that the spindle speed is increased to 12000 rpm up to 24000 rpm with 60 second dwelling periods. This allows the spindle to warm up for milling. Note that the duration of this warm up period depends on your machine. After this warm up a first movement in the X-Y plane is performed as above which is followed by a 5 second pause to check whether everything is correct. Next, the mill is lowered and the main part of the program starts.
+
+\begin{verbatim}
+(Generated by PartKam Version 0.05)
+
+G21 G90 G40
+
+(profile 1)
+G0 Z5
+G17
+
+M3 S6000
+G4 P60
+S12000
+G4 P60
+S18000
+G4 P60
+S24000
+G4 P60
+
+G0 X11.05 Y65
+G4 P5
+
+G1 Z-1.1 F300
+G3 X11.761421319796954 Y53.845177664974614 I87.68274111675127 J0 F1000
+\end{verbatim}
+
+%Current setup:
+%
+%\begin{itemize}
+%    \item FreeCad to make the designs -> export as svg
+%    \item Inkscape to place the svgs correctly \& create stator holes -> export as svg
+%    \item Makercam.com to create gcode.
+%\end{itemize}
+%
+%CNC Drills:
+%
+%\begin{itemize}
+%    \item 2mm drill for pcb
+%    \item 2mm end mill for pcb (diamond coated)
+%    \item 6mm drill for wood 2-flute
+%    \item 2mm drill for wood 2-flute
+%\end{itemize}
+%
+%Ordered via \url{www.cnc-plus.de} and \url{www.sorotec.de}.
 
 \subsection{Etching the stators}
 \label{s:driver:etching}
@@ -241,16 +292,19 @@ The driver can be tested by hooking it up to the amp and leave it as is for 3 to
 %    \item How to do accurate etching and what chemicals should be used? FeCl or HCl are options
 %    \item How can the surface resistance of the diaphragm be measures? Simply measure at opposite sides? Check multimeter capabilities as it might not be able to measure resistance in the GOhm range. Try to find alternative ways of measuring resistance if that is the case. Resistance should be around 10 - 100 MOhm per square (cm ?). \url{https://dannyelectronics.wordpress.com/2016/01/28/the-nano-ammeter-you-already-have/} shows a way to measure small currents
 %\end{enumerate}
-
-\subsection{Potential improvements}
-\begin{enumerate}
-    \item Drill holes with two different sizes to get a larger hole to surface area ratio
-    \item A space filling curve could be used to further reduce the copper on the stators
-\end{enumerate}
+%
+%\subsection{Potential improvements}
+%\begin{enumerate}
+%    \item Drill holes with two different sizes to get a larger hole to surface area ratio
+%    \item A space filling curve could be used to further reduce the copper on the stators
+%\end{enumerate}
 
 \section{Building the enclosure}
 \label{s:enclosure}
-Wooden enclosures are potentially problematic as they can attract moisture which can cause electrical leakage. Sennheiser uses varnish on the outside of their wooden cups but none on the inside. It is possible to use a plastic O-ring to avoid direct contact between the wood and the driver.
+
+Since we were already using a CNC machine to manufacture the drivers we opted for the same toolchain to create the enclosure. As wood is a common material in enclosure construction we decided to use it as well. We again designed the enclosure as a 2.5-D shape using Inkscape. The Gcode was created using \url{www.makercam.com} similarly to the driver. To machine the enclosure we used a 6mm and a 2mm 2-flute end mill.
+
+% Wooden enclosures are potentially problematic as they can attract moisture which can cause electrical leakage. Sennheiser uses varnish on the outside of their wooden cups but none on the inside. It is possible to use a plastic O-ring to avoid direct contact between the wood and the driver.
 
 \section{Building the headband}
 \label{s:headband}
