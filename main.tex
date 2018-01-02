@@ -68,7 +68,7 @@ In this section we list all the materials we had to purchase for the headphones 
     \item Contact glue for gluing the membrane to the stators and the earpads: \footnote{\url{https://www.conrad.com/ce/en/product/631802/UHU-greenit-Contact-adhesive-45401-650-g?ref=searchDetail}}
 
 \end{enumerate}
-Here's a more comprehensive list of material suppliers: \url{http://www.head-fi.org/t/826032/electrostatic-ear-speaker-diyers-suppliers-list}
+Head-fi.org \footnote{\url{http://www.head-fi.org/t/826032/electrostatic-ear-speaker-diyers-suppliers-list}} has a more comprehensive list of material suppliers.
 \\
 \\
 Materials needed for the amplifier:
@@ -193,6 +193,8 @@ G1 Z-1.1 F300
 G3 X11.761421319796954 Y53.845177664974614 I87.68274111675127 J0 F1000
 \end{verbatim}
 
+After milling it is particularly important to deburr the stator holes, but it also makes sense to sand down the edges of all workpieces.
+
 %Current setup:
 %
 %\begin{itemize}
@@ -214,7 +216,8 @@ G3 X11.761421319796954 Y53.845177664974614 I87.68274111675127 J0 F1000
 
 \subsection{Etching the stators}
 \label{s:driver:etching}
-Etching the PCB board ensures that electrical contacts are only where they absolutely need to be. Furthermore, having less copper surface will result in a reduced capacitance and they will be easier to drive because of that. Toner transfer can be used to define the areas that should not be etched. After etching the stators can be protected by spraying thin layers of Acrylic paint on the copper (flat not glossy paint). This insulation avoids degradation of the copper surface and potential shorts when dust is present between the diaphragm and the stators. A small area needs to be left open so that wires can be soldered onto the stators.
+TODO-BB: Write particularly about what areas are left with copper (maybe a diagram)
+Etching the PCB board ensures that electrical contacts are only where they absolutely need to be. Furthermore, having less copper surface will result in a reduced capacitance and they will be easier to drive because of that. Toner transfer can be used to define the areas that should not be etched.
 
 \url{http://www.instructables.com/id/Stop-using-Ferric-Chloride-etchant!--A-better-etc/}
 
@@ -222,55 +225,69 @@ Etching is achieved by using 2 parts Hydrogen Peroxide (3\%) with 1 part Hydroch
 
 \subsection{Tensioning the Mylar diaphragm}
 \label{s:driver:tension}
-Mylar with 3 $\mu m$ thickness is used to create the diaphragm. Thinner Mylar will cause a lack of bass, while thicker one will cause problem in treble and mids. The tensioning should be high enough as otherwise the diaphragm will collapse onto a stator but also low enough in order to not reduced the bass.
-Different ways of tensioning the Mylar:
-\begin{enumerate}
-    \item With weights on the side
-    \item Using a bicycle tire and inflating it
-    \item Using tape to stretch it
-\end{enumerate}
+Mylar with 3 $\mu m$ thickness is used to create the diaphragm. Thinner Mylar will cause a lack of bass, while thicker one will cause problem in treble and mids. The tensioning should be high enough as otherwise the diaphragm will collapse onto a stator, loosing its charge, but also low enough in order to not reduced the bass. Two different ways of tensioning the Mylar were established in the head-fi thread.
+The first method can be seen in Fig. \ref{f:driver:tension:weight} and consists of using several weights equally distributed around a circular surface. This is also the method that we will use in the following.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=0.5\textwidth]{images/mylar-tension-weight.png}
     \caption{A Mylar tensioning rig using weights}
     \label{f:driver:tension:weight}
 \end{figure}
+The other option, shown in Fig. \ref{f:driver:tension:tire}, uses a bicycle tire that is fixed to the outside of a cylinder. The Mylar is stretched over the cylinder and fixed on the bottom using adhesive tape. The tire is then inflated until the desired stretching has been achieved. A discussion on this method can be found on the head-fi thread\footnote{\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1095#post_9907534}}.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=0.5\textwidth]{images/mylar-tension-tire.png}
     \caption{A Mylar tensioning rig using an inflatable tire}
     \label{f:driver:tension:tire}
 \end{figure}
-\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/720#post_9217468} -> Orpheus clone tensioning; weights should be larger between 0.8 and 1.0 kg. Preferred option
+%\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/720#post_9217468} -> Orpheus clone tensioning; weights should be larger between 0.8 and 1.0 kg. Preferred option
+As mentioned above we will use the method with the weights in the following. In our case we used 8 weights with 1 kg each and attach it to the Mylar. A picture of our improvised jig can be seen in Fig. \ref{f:driver:tension:weight:2}. We used a pan and placed a thick sheet of paper on it in order to provide a flat base for the Mylar to lie on. Gaffer tape was used to attach the weights equally around the outside. Next, we put our two back spacers on the Mylar and drew the outline onto the Mylar. Gluing both spacers at the same time ensures that the tension is the same on both sides. The spacers were then removed and both the spacer and their outline on the Mylar were covered with a thin layer of UHU Greenit. This is a contact cement or synthetic rubber glue, alternatives include UHU Por, 3M 4693. The glue is allowed to dry for 15 minutes, after which the spacers are placed onto the Mylar and pressed firmly onto them. We actually used a rolling pin to increase the pressure and thus the glueing strength\footnote{\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1215#post_10400583}}.
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/mylar-tension-weight-2.png}
+    \caption{Our Mylar tensioning rig using weights}
+    \label{f:driver:tension:weight:2}
+\end{figure}
+After this, the weights can be removed and the excess Mylar can be cut away from the spacers. Note that it is very important to not have any Mylar overlap the edge of the spacer. We used a small scissor and then went around the edges with an old soldering iron to ensure this. After completing this step the spacers can be knocked on the side of a table to check whether the sound of both diaphragms is similar. If not, a  hot air gun can be used to loosen the tension of a diaphragm.
 
-\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1095#post_9907534} -> tire tensioning jig.
+An idea on how to identify the correct tension of the diaphragm by checking the free-air resonance frequency (should be between 100 and 200 Hz) using a white noise generator on one side and a microphone on the other was also mentioned in the thread\footnote{\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1770#post_11440100}}, but we did not try this.
 
-Before putting it on the glass (and before coating) clean it with Acetone. To cut the Mylar after glueing use a soldering iron. Ensure there is no Mylar beyond the edges. The stators might warp slightly but this should be ok when assembling the driver.
+Note, while this step sounds easy, it is actually the most difficult one to get right and has probably the most significant impact on the sound of your headphones. Because of this is makes sense to actually produce a few extra back spacers to try different configurations. Alternatively, UHU Greenit can be removed from the spacers using Acetone, so a new attempt can be made.
 
-Make sure the diaphragm is very well glued to the stator. The contact cement is applied to the spacer which is allowed to sit for 3-5 minutes. After that the spacer is put on the Mylar and a bond will be created immediately. A good contact can be achieved by running the finger along the spacers several times so that the glue is everywhere in contact with the spacer. See \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1215#post_10400583}
-
-After glueing the Mylar onto the spacers knock them on the side of a table to check that the sound of both diaphragms is similar. If not, a hot air gun can be used to tension the one with a looser sound.
-
-Tension is sufficient if wrinkles on the Mylar vanish during the procedure, corresponding to about 0.5\% of displacement. The two diaphragms need to be glued on the same mylar film so that the tension is the same on both sides.
-
-\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1770#post_11440100} idea on how to identify the correct tension of the diaphragm by checking the free-air resonance frequency (should be between 100 and 200 Hz) using a white noise generator on one side and a microphone on the other.
+%Tension is sufficient if wrinkles on the Mylar vanish during the procedure, corresponding to about 0.5\% of displacement.
 
 \subsection{Coating the diaphragm}
-As Mylar is not conductive an additional coating is required so that it can be charged. It basically should act as if it was a capacitor, so a coating that is conductive and has a high resistivity is ideal. Coating agents are:
+As Mylar is not conductive an additional coating is required so that it can be charged. It basically should act as if it was a capacitor, so a coating that is conductive and has a high resistivity is ideal. Coating agents mentioned in the thread are:
 \begin{enumerate}
-    \item Staticide 6300 (anti static cleaner for monitors)
+    \item Staticide 6300 (anti-static cleaner for monitors)
     \item Licron antistatic spray
     \item Swash Floor cleaner
 \end{enumerate}
-Coating is achieved by applying a small drop of Staticide onto the diaphragm and then spreading it with a sponge or microfibre cloth (lint free!). After it dries clean wipe the surface again with a dry lint free cloth.
+In our case we simply bought a anti-static spray for computer monitors, which worked without any issues. Coating is achieved by applying a small drop of the coating agent onto the diaphragm and then spreading it with a sponge or microfibre cloth (lint free). The coating only happens on one side of the diaphragm namely the side pointing away from the spacer. It should be ensured that the coating also happens on the part of the diaphragm that is above the spacer, i.e. all the way to the edge. After the coating has dried the surface can be cleaned again with a dry lint free cloth. It is advisable to check the surface before the assembly to ensure that there is no dust on it. Otherwise pressurized air or masking tape can be used to clean the diaphragm.
 
-Thread about coating: \url{http://www.diyaudio.com/forums/planars-exotics/109789-esl-diaphragm-coating.html}
+Diyaudio.com also has a thread about coating\footnote{\url{http://www.diyaudio.com/forums/planars-exotics/109789-esl-diaphragm-coating.html}}.
 
-Is this Staticide a gel?
+\subsection{Cable}
+The cable that connects the headphone with the step up transformer consists of three about 3m long litz wires ($0.14mm^2$)that were braided together. One side was soldered directly onto the stators and one spacer whereas the other side was fitted with banana plugs to connect the headphones to the transformer.
+
+While this might not be the perfect solution in terms of elegance and signal transmission it was a inexpensive and functional way to make the headphones sing.
+
+Alternatives include replacement cables for KOSS headphones. Apparently an extension cable for the ESP-950 headphone should do the trick. \footnote{\url{https://www.head-fi.org/threads/my-diy-electrostatic-headphones.498292/page-51#post-9325470}}
+
+%Cables should be doubly insulated to withstand the high voltage. DIN plugs are used by many for electrostatic headphones but it might not be safe due to the high voltages, same for XLR. Ribbon cables rated for high voltages are recommended.
+%\begin{enumerate}
+%    \item Cable building (low capacitance)
+%    \item Connector building: need 6 pins ideally (3 for each side, for front and rear stator as well as one for the diaphragm DC voltage)
+%\end{enumerate}
 
 \subsection{Assembly}
 \label{s:driver:assembly}
-Synthetic rubber glue (contact cement, UHU Greenit, alternatives: UHU Por, 3M 4693) is used to glue the diaphragm to the spacers. The dust protection screen must also be placed on some spacers (1mm thickness PCB) and must not be in contact with the stators. 1 $\mu m$ Mylar is crumpled and then stretched somewhat so that it doesn't touch the stators when on the spacer. This yields an ideal acoustically transparent material for dust protection. Normally, no dust cover is used on the outside. As no sweat protection is required on this side a very fine cloth could be used if needed. Only one spacer is glued to the diaphragm. This spacer will be the one facing the outside. The spacer on the inside will have the copper side in contact with the coated diaphragm and will be the one with the electrical contact to the DC bias voltage.
+Before assembling the driver a dust protector needs to be built using the 1 mm spacer made from FR4 and a 1 $\mu m$ Mylar film. The Mylar is crumpled by hand and then slightly stretched using masking tape on a flat surface. We then follow the same procedure as for the diaphragm, i.e. putting glue on both the spacer and the Mylar, letting it dry and then pressing the two firmly together. The crumpling of the Mylar should ensure that this film is acoustically transparent but keeps dust out of the driver. The slight stretching is needed so that it doesn't touch the spacer. The dust protection is only between the ear and the driver as the coated side of the diaphragm is also towards the ear. Because of this, no dust protection is required on the outside.
+
+As we chose to have no connector directly at the headphone, we soldered the cables directly onto the two stators and the 0.5 mm front spacer without the diaphragm. Then the conducting side of the two stators was sprayed with (in our case black) acrylic spray to insulate them. This avoids arching once the stators and diaphragm are charged.
+
+Afterwards the driver can be assembled. See Fig. \ref{f:driver:assembly:arrangement} for a visual representation of the arrangement of the different parts. The part furthest away from the ear is the stator with negative wire with the acrylic covered copper side pointing towards the ear. This is followed by the spacer with the diaphragm where the side with the diaphragm and the coating points towards the ear. Next, the front spacer is added with its copper side pointed away from the ear so that an electric connection between the diaphragm and the front spacer with the cable is made. The remaining stator is then placed onto the spacer with the acrylic covered copper side pointing away from the ear. Finally, the dust spacer is placed on the assembly with the crumpled Mylar pointing towards the ear to complete the driver.
+
 \begin{figure}[htb]
     \centering
     \includegraphics[width=0.5\textwidth]{images/arrangement.png}
@@ -278,11 +295,7 @@ Synthetic rubber glue (contact cement, UHU Greenit, alternatives: UHU Por, 3M 46
     \label{f:driver:assembly:arrangement}
 \end{figure}
 
-Plastic screws are used to assemble the driver unit.
-
-Adhesive tape (masking tape) and pressurized air can be used to clean the dust of the diaphragm and stators. A magnifying glass should be used for checking cleanliness.
-
-The driver can be tested by hooking it up to the amp and leave it as is for 3 to 4 hours without playing any music. The diaphragm should not be sucked to one side during this.
+To perform some tests we used some clothespins to keep the driver together. Be careful when running tests with the driver outside the enclosure as nearly all parts will be charged. The driver can be tested by hooking it up to the amp and leave it as is for 3 to 4 hours without playing any music. The diaphragm should not be sucked to one side during this. It is also easy to hear any arching that occurs due to dust or other mistakes in the production. Sometimes it is easy to see where the arching occurs and it is usually easy to correct the cause (by using pressurized air or sanding the corners). After testing and before the driver is disassembled, e.g. for correcting something, it is advisable to connect all three wires to ground in order to allow the parts to discharge.
 
 %\subsection{TODO}
 %\begin{enumerate}
@@ -301,6 +314,7 @@ The driver can be tested by hooking it up to the amp and leave it as is for 3 to
 
 \section{Building the enclosure}
 \label{s:enclosure}
+TODO-AM
 
 Since we were already using a CNC machine to manufacture the drivers we opted for the same toolchain to create the enclosure. As wood is a common material in enclosure construction we decided to use it as well. We again designed the enclosure as a 2.5-D shape using Inkscape. The Gcode was created using \url{www.makercam.com} similarly to the driver. To machine the enclosure we used a 6mm and a 2mm 2-flute end mill.
 
@@ -308,6 +322,7 @@ Since we were already using a CNC machine to manufacture the drivers we opted fo
 
 \section{Building the headband}
 \label{s:headband}
+TODO-BB
 
 \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/675#post_8943826}
 
@@ -344,18 +359,7 @@ The leather cover is made from a thin and stretchy synthetic leather. It's made 
 \section{Assembly}
 \label{s:assembly}
 
-\subsection{Cable}
-The cable that connects the headphone with the step up transformer consists of three about 3m long litz wires ($0.14mm^2$)that were braided together. One side was soldered directly onto the stators and one spacer whereas the other side was fitted with banana plugs to connect the headphones to the transformer.
-
-While this might not be the perfect solution in terms of elegance and signal transmission it was a inexpensive and functional way to make the headphones sing.
-
-Alternatives include replacement cables for KOSS headphones. Apparently an extension cable for the ESP-950 headphone should do the trick. \footnote{\url{https://www.head-fi.org/threads/my-diy-electrostatic-headphones.498292/page-51#post-9325470}}
-
-%Cables should be doubly insulated to withstand the high voltage. DIN plugs are used by many for electrostatic headphones but it might not be safe due to the high voltages, same for XLR. Ribbon cables rated for high voltages are recommended.
-%\begin{enumerate}
-%    \item Cable building (low capacitance)
-%    \item Connector building: need 6 pins ideally (3 for each side, for front and rear stator as well as one for the diaphragm DC voltage)
-%\end{enumerate}
+TODO-AM write about screws.
 
 \section{Amplifier}
 \label{s:amp}
@@ -412,9 +416,11 @@ As part of the current build we did not perform any measurements and this will b
 
 Allow for a little space between enclosing and driver.
 
-Shrink wrapped cable with proper xlr connector.
+Shrink wrapped cable with proper xlr connector and connector at the headphone. Space for the cables milled out when creating the enclosure.
 
 Earpad made out of three pieces (2 rectangular ones and one ellipse).
+
+Proper enclosing for the step-up transformer or even a real amplifier for electrostatic headphones. Additional cables to connect the step-up transformer to headphone amplifiers.
 
 \subsection{Closed headphones}
 \label{s:future:closed}
