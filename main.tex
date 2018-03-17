@@ -314,9 +314,37 @@ To perform some tests we used some clothespins to keep the driver together. Be c
 
 \section{Building the enclosure}
 \label{s:enclosure}
-TODO-AM
 
 Since we were already using a CNC machine to manufacture the drivers we opted for the same toolchain to create the enclosure. As wood is a common material in enclosure construction we decided to use it as well. We again designed the enclosure as a 2.5-D shape using Inkscape. The Gcode was created using \url{www.makercam.com} similarly to the driver. To machine the enclosure we used a 6mm and a 2mm 2-flute end mill.
+
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{images/encasing_back_height_map.png}
+        \caption{Back enclosure (red: 10mm, blue: 8mm, green: 4mm)}
+        \label{f:enclosure:back}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{images/encasing_front_height_map.png}
+        \caption{Front enclosure (red: 2mm, blue: 4mm)}
+        \label{f:enclosure:front}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{images/pad_height_map.png}
+        \caption{Pad ring (red: 4mm)}
+        \label{f:enclosure:pad}
+    \end{subfigure}
+    \caption{Height maps of all enclosure components}
+    \label{f:enclosure:components}
+\end{figure}
+
+All three wooden components of the enclosure can be seen in Fig. \ref{f:enclosure:components}. The back enclosure is the part furthest away from the ear and has a maximum thickness of 10 mm (see Fig. \ref{f:enclosure:back}) and is responsible for housing the driver. The four blue circles and the four red half circles were put into place to provide a fixed space for the driver to sit in. However, as our opening is elliptic, the driver cannot move anyways, so this was not really necessary. The second reason for this was to provide space for up to 8 screws to hold everything together. In the end we only used four screws which were drilled through the center of the blue circles. Our biggest mistake when making the enclosures was to not allow for any space between the driver and the enclosure. In a perfect world, everything would have fit, but in reality it would make sense to leave a bit of room, e.g. 0.5 mm. We also did not include any space for the cables at the bottom of the back enclosure. This was later added manually, but ideally, we would have added this at this stage already as it would make everything a lot cleaner.
+
+The front enclosure is fairly straightforward and is machined from 4 mm thick wood. It's main task is to keep the driver inside the back enclosure. Again, because we machined it to perfect precision we needed to do quite a bit of sanding to eventually get it to fit. Since we are machining wood, the mill actually compresses the wood and a perfect fit is not attainable.
+
+Finally, the last part is the pad ring. This ring will sit inside the ear pad and we use it to glue the leather of the pad onto it and provide screw holes for the connection with the enclosure.
+
+After milling these components for each side, we sanded them down to make sure that they fit together and get a smooth finish. We assembled the three parts together and used a 2 mm drill to create four screw holes (as noted above, through the blue circles in the back encasing). Additional holes where drilled into the side of the back enclosure to accommodate the wires from the headband, see below. We then applied some transparent wood glaze and let the pieces dry. Unfortunately, the glaze was quite thick, so it did not look very clean. For the next iteration we will probably use a different finish (e.g. wax or oil).
 
 % Wooden enclosures are potentially problematic as they can attract moisture which can cause electrical leakage. Sennheiser uses varnish on the outside of their wooden cups but none on the inside. It is possible to use a plastic O-ring to avoid direct contact between the wood and the driver.
 
@@ -334,7 +362,7 @@ The earpads should be thick enough so that the bass is powerful and deep enough.
 \begin{figure}
 \centering
 \includegraphics[width=0.3\textwidth]{images/earpad.pdf}
-\caption{Earpad cut-through; materials: wood (yellow), foam (grey), screw nut (black), artificial leather (blue), contact cement (green)}
+\caption{Earpad cut-through; materials: wooden pad ring (yellow), foam (grey), screw nut (black), artificial leather (blue), contact cement (green)}
 \label{f:pads:cut}
 \end{figure}
 The earpad is based on a wooden ellipse with 4mm thickness that was also manufactured using the CNC. After we had the full enclosing together we put the front and the back of the enclosing together with this ellipse to drill four holes for the assembly. The screw nuts were glued to the inside of the ellipse using copious amounts of epoxy. A schematic of the earpad can be seen in Fig. \ref{f:pads:cut}. After the glue has hardened (see your glue for the time, for ours it was about 24h) we loosened the screws and disassembled everything. The next step consisted of cutting the same ellipse from acoustic foam with 3cm thickness.
@@ -359,7 +387,26 @@ The leather cover is made from a thin and stretchy synthetic leather. It's made 
 \section{Assembly}
 \label{s:assembly}
 
-TODO-AM write about screws.
+At this time pretty much everything is ready for assembly. We only made one small additional change to the back enclosure which consisted of adding a plastic net to the outside so that it was not possible to directly touch the driver. We attempted to do this by stapling the net to the inner, 4 mm high side wall, but this was quite a fiddly task. For our next iteration we will probably think about this issue beforehand to make sure that this will look smoother and is easier to assemble.
+
+After the back enclosure was ready, we inserted the driver. This is done in the following order:
+
+\begin{enumerate}
+\item Stator with acrylic (copper) side pointing towards the ear
+\item 0.5 mm spacer with membrane, which is pointing towards the ear
+\item 0.5 mm Spacer with the cable and conducting copper side, which should be pointing away from the ear
+\item Stator with acrylic (copper) side pointing away from the ear
+\item 1 mm spacer with crumpled membrane, which is pointing towards the ear
+\end{enumerate}
+
+After threading the cable through the opening, we added the front enclosure to keep everything in place. The two enclosure parts were then connected using the four 2 mm screws. The earpad is then placed on the assembly and the four screws are driven through the pad to complete it. Finally, the headband is inserted into the holes inside of the back enclosure.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/headphones_side.jpg}
+    \caption{The assembled headphones}
+    \label{f:assembly:phones}
+\end{figure}
 
 \section{Amplifier}
 \label{s:amp}
@@ -396,6 +443,13 @@ The green part in Fig. \ref{f:amp:step-up-real} corresponds to the lower part in
 
 Note that when operating the headphone its component will be charged and this charge will persist even if power to the transformer has been shut down. It is necessary to discharge all components before disassembly which can be achieved by leaving the power cord connected after shutdown and using the ground connection of the power cord. We hooked up a cable to the ground connection and discharge all outgoing ports by touching them briefly with this cable.
 
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/headphones_and_amp.jpg}
+    \caption{Headphones and step-up transformer}
+    \label{f:amp:all}
+\end{figure}
+
 %Check if it is possible to add a voltage regulator to try out different bias voltages easily \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1560#post_10959595}.
 %
 %Amp safety: \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1455#post_10705917} and \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/1470#post_10706261}
@@ -425,10 +479,20 @@ Proper enclosing for the step-up transformer or even a real amplifier for electr
 \subsection{Closed headphones}
 \label{s:future:closed}
 
-Materials used for damping included felt, wool or other acoustically semi-transparent materials. Some also coat the inside of the enclosure with Bitumen.
+We did not really attempt closed headphones for this first prototype as it comes with all sorts of issues that we wanted to avoid. The biggest certainly is the damping of the noise on the outside. Materials used for damping included felt, wool or other acoustically semi-transparent materials. Some also coat the inside of the enclosure with Bitumen. But these are just some notes that we found while reading the thread on Head-Fi. More practical experience might follow in the future (or from you).
 
 \section{Collaboration \& License}
-This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License \footnote{\url{http://creativecommons.org/licenses/by-sa/4.0/}}. The official repository for this guide can be found on github.com \footnote{\url{https://github.com/Azrael3000/headphone-guide}}. There is an issue tracker available if you do not know how to work with \LaTeX and git. We very much jumped into this venture without prior knowledge of a lot of things that we had to tackle. Because of this there might very well be mistakes in this guide or in our approach that we are happy to learn about. So do get in touch with us if you have any remarks and want to help us improve this document. We plan to build version 2 of the headphones in 2018 and with this we will also update and improve this guide.
+\label{s:collab}
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License \footnote{\url{http://creativecommons.org/licenses/by-sa/4.0/}}. The official repository for this guide can be found on github.com \footnote{\url{https://github.com/Azrael3000/headphone-guide}}. There is an issue tracker available on this site if you do not know how to work with \LaTeX and git.
+
+We very much jumped into this venture without prior knowledge of a lot of things that we had to tackle. Because of this there might very well be mistakes in this guide or in our approach that we are happy to learn about. So do get in touch with us if you have any remarks and want to help us improve this document. We plan to build version 2 of the headphones in 2018 and with this we will also update and improve this guide.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/arno_and_benni.jpg}
+    \caption{Arno and Benni, the two authors with the finished headphones}
+    \label{f:collab}
+\end{figure}
 
 \section{Appendix}
 \label{s:app}
