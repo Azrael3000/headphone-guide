@@ -15,7 +15,7 @@
 
 \section{Introduction}
 \label{s:intro}
-The following document will describe the journey to construct your own electrostatic headphones starting with zero, zilch, nada, niente and nichts. In Section \ref{s:tools} we will list the tools required for the building process, which will be followed by a list of materials in Section \ref{s:materials}. The actual construction process is split into five parts, the building of the driver (Section \ref{s:driver}), enclosure (Section \ref{s:driver}), headband (Section \ref{s:headband}) and earpads (Section \ref{s:pads}) with a final assembly in Section \ref{s:assembly}. Finally, the last two chapters will deal with measurements (Section \ref{s:measurements}) and things that we would do differently for the second pair (Section \ref{s:future}).
+The following document will describe the journey to construct your own electrostatic headphones starting with zero, zilch, nada, niente and nichts. In Section \ref{s:tools} we will list the tools required for the building process, which will be followed by a list of materials in Section \ref{s:materials}. The actual construction process is split into five parts, the building of the driver (Section \ref{s:driver}), enclosure (Section \ref{s:enclosure}), headband (Section \ref{s:headband}) and earpads (Section \ref{s:pads}) with a final assembly in Section \ref{s:assembly}. Finally, the last two chapters will deal with measurements (Section \ref{s:measurements}) and things that we would do differently for the second pair (Section \ref{s:future}).
 
 The whole construction is based on the Head-Fi.org thread \cite{head-fi-diy-thread}, with different and more detailed sources (\cite{electrostatic-hp-design,tcengineering-electrostatic-drivers,ww_1979}) given in the respective sections.
 
@@ -31,7 +31,7 @@ The basic electrical concept of a electrostatic headphone can be seen in Fig. \r
 \section{Required tools}
 \label{s:tools}
 
-To build the drivers it is highly recommended that you have access to a good CNC machine. Since we didn't have one of those standing around, we looked for a so called fablab, i.e. a community led workshop for creative projects. We eventually ended up at the Viennese Metalab\footnote{\url{https://metalab.at/}} which gave us access to a heavy duty level CNC machine and an introduction on how to use it by Sebastian Bachmann\footnote{\url{https://www.reox.at/}}, which eased the learning curve significantly. The principal introduction included instructions on how to set up, start and operate the machine and the control terminal, as well as some GGode basics (the programming language that controls the machine's behaviour - more on that in section \ref{s:driver:design:gcode}). Most importantly, as it can be potentially quite dangerous to operate one of those things, it covered security basics, which is definitely the first starting point for anyone new to CNC. Don't skip your tutorial lessons, kids!
+To build the drivers it is highly recommended that you have access to a good CNC machine. Since we didn't have one of those standing around, we looked for a so-called fablab, i.e. a community led workshop for creative projects. We eventually ended up at the Viennese Metalab\footnote{\url{https://metalab.at/}} which gave us access to a heavy duty level CNC machine and an introduction on how to use it by Sebastian Bachmann\footnote{\url{https://www.reox.at/}}, which eased the learning curve significantly. The principal introduction included instructions on how to set up, start and operate the machine and the control terminal, as well as some GGode basics (the programming language that controls the machine's behaviour - more on that in section \ref{s:driver:design:gcode}). Most importantly, as it can be potentially quite dangerous to operate one of those things, it covered security basics, which is definitely the first starting point for anyone new to CNC. Don't skip your tutorial lessons, kids!
 
 Since you might be interested in the budget needed for this, it of course depends on the lab's membership policy - most labs we found had a monthly fee with a minimum subscription period, but we were able to come to an arrangement with a voluntary contribution without binding membership. Most people running those kinds of open creative space are pretty chill, so don't be afraid to ask!
 
@@ -51,24 +51,24 @@ An electric drill was used for the assembly screws and headband construction. Th
 In this section we list all the materials we had to purchase for the headphones and our DIY step-up transformer. We provide you with the links where we bought the materials, but depending on where you live you might find better suppliers yourself.
 
 \begin{enumerate}
-    \item 1 mm PCB FR-4 for stators and dust protection spacers:  \footnote{\url{https://www.conrad.com/ce/en/product/523656/PCB-material-Photo-coating-positive-single-sided-35-m?ref=list}}
-    \item 0.5 mm PCB for spacers: \footnote{\url{https://www.conrad.com/ce/en/product/523630/PCB-material-Photo-coating-positive-single-sided-35-m?ref=list}}
-    \item 3 $\mu m$ Mylar (for diaphragm): \footnote{\url{https://www.ebay.com/itm/Electrostatic-Speaker-Membrane-Dupont-Mylar-C-3um-40M/172781729300?epid=666335680&hash=item283a97f614:g:jg0AAOSwrklVPe61}} (with that, you should have all your mylar needs covered for years to come!)
-    \item 1 $\mu m$ Mylar (for dust protection): \footnote{\url{https://www.freeflightsupplies.co.uk/index.php/products/lightweight-covering-materials}}
-    \item Anti-static display cleaner for diaphragm coating: \footnote{\url{https://www.conrad.com/ce/en/product/995207/DataFlash-DF1620-Content-250-ml?ref=searchDetail}}
-    \item Acrylic spray for insulating the stators: \footnote{\url{https://www.conrad.com/ce/en/product/1198455/Acrylic-paint-Revell-Black-matt-08-Spray-can-100?ref=searchDetail}}
+    \item 1 mm PCB FR-4 for stators and dust protection spacers  \footnote{\url{https://www.conrad.com/ce/en/product/523656/PCB-material-Photo-coating-positive-single-sided-35-m?ref=list}}
+    \item 0.5 mm PCB for spacers \footnote{\url{https://www.conrad.com/ce/en/product/523630/PCB-material-Photo-coating-positive-single-sided-35-m?ref=list}}
+    \item 3 $\mu m$ Mylar (for diaphragm) \footnote{\url{https://www.ebay.com/itm/Electrostatic-Speaker-Membrane-Dupont-Mylar-C-3um-40M/172781729300?epid=666335680&hash=item283a97f614:g:jg0AAOSwrklVPe61}} (with that, you should have all your mylar needs covered for years to come!)
+    \item 1 $\mu m$ Mylar (for dust protection) \footnote{\url{https://www.freeflightsupplies.co.uk/index.php/products/lightweight-covering-materials}}
+    \item Anti-static display cleaner for diaphragm coating \footnote{\url{https://www.conrad.com/ce/en/product/995207/DataFlash-DF1620-Content-250-ml?ref=searchDetail}}
+    \item Acrylic spray for insulating the stators \footnote{\url{https://www.conrad.com/ce/en/product/1198455/Acrylic-paint-Revell-Black-matt-08-Spray-can-100?ref=searchDetail}}
     \item Thin and stretchy artificial leather for the earpads and headband (should be available in a textile shop)
     \item Wood for the enclosure and headband, several boards with 4mm and 10mm thickness; we used lime and spruce
-    \item Metal rods (3mm welding rods) for the headband
+    \item Metal rods (3 mm welding rods) for the headband
     \item 3 cm acoustic foam (pads and headband)
     \item Cable plus connectors
     \item Screws for the assembly (2,5 x 20 mm)
     \item Clear varnish or glaze for wood finish
-    \item Two-component glue: \footnote{\url{https://www.conrad.com/ce/en/product/478703/UHU-Plus-Schnellfest-Two-component-adhesive-45700-35-g?ref=list}}
-    \item Contact glue for gluing the membrane to the stators and the earpads: \footnote{\url{https://www.conrad.com/ce/en/product/631802/UHU-greenit-Contact-adhesive-45401-650-g?ref=searchDetail}}
+    \item Two-component glue \footnote{\url{https://www.conrad.com/ce/en/product/478703/UHU-Plus-Schnellfest-Two-component-adhesive-45700-35-g?ref=list}}
+    \item Contact glue for gluing the membrane to the stators and the earpads \footnote{\url{https://www.conrad.com/ce/en/product/631802/UHU-greenit-Contact-adhesive-45401-650-g?ref=searchDetail}}
 
 \end{enumerate}
-Head-fi.org \footnote{\url{http://www.head-fi.org/t/826032/electrostatic-ear-speaker-diyers-suppliers-list}} has a more comprehensive list of material suppliers.
+Head-fi.org \footnote{\url{http://www.head-fi.org/t/826032/electrostatic-ear-speaker-diyers-suppliers-list}} also provides a list of material suppliers, in case the sources we listed aren't available in your region.
 \\
 \\
 Materials needed for the amplifier:
@@ -90,7 +90,7 @@ Materials needed for the amplifier:
 
 \subsection{Design of the stators and spacers}
 \label{s:driver:design}
-In the following the stators and spacers will be designed and the designs will be prepared for CNC milling. As the stators and spacers are 2-D, we decided to use Inkscape \footnote{\url{https://www.inkscape.org}} for our design purposes. There are plenty of guides on how to use Inkscape around so we assume that the reader is familiar with it. But in the end we almost exclusively used the basic objects like spheres and ellipses and boolean operators (to be found under the \textit{Path} menu).
+In the following the stators and spacers will be designed and the designs will be prepared for CNC milling. As the stators and spacers are 2-D, we decided to use Inkscape \footnote{\url{https://www.inkscape.org}} for our design purposes. There are plenty of guides on how to use Inkscape around so we assume that the reader can get familiar with it elsewhere. But in the end we almost exclusively used the basic objects like spheres and ellipses and boolean operators (to be found under the \textit{Path} menu).
 
 \begin{figure}
     \centering
@@ -214,15 +214,38 @@ After milling it is particularly important to deburr the stator holes, but it al
 %
 %Ordered via \url{www.cnc-plus.de} and \url{www.sorotec.de}.
 
-\subsection{Etching the stators}
+\subsection{Etching the stators and spacers}
 \label{s:driver:etching}
-TODO-BB: Write particularly about what areas are left with copper (maybe a diagram)
-Etching the PCB board ensures that electrical contacts are only where they absolutely need to be. Furthermore, having less copper surface will result in a reduced capacitance and they will be easier to drive because of that. Toner transfer can be used to define the areas that should not be etched.
+Now it's time for some chemical action! Etching means using a chemical compound (acid) to remove unnecessary layers of copper where you don't want your parts to be conductive. In our case we only want electricity in the areas that we need to build up our electrostatic field that moves the membrane: The sides of the stators facing the diaphragm and one side of the spacer that touches the membrane's coated area. 
+Ideally, you'll want to use PCB-parts that are copper-layered only on a single side, because no part needs to be conductive on both sides and you can save a lot of etching work. That way, you only need to etch the back spacer and dust protection spacer of each side completely (these are the ones the Mylar is glued to). For two-sided material you additionally need to etch one side of both front spacers clean of copper. Fig. \ref{f:driver:schematic} shows a schematic of the driver explaining which parts need to be etched and which need to be conductive.
 
-\url{http://www.instructables.com/id/Stop-using-Ferric-Chloride-etchant!--A-better-etc/}
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/schematic_driver.pdf}
+    \caption{Schematic of the driver components in the order of assembly. Shown are the conductive and non-conductive areas and the cable connection spots.
+    (a) dust protection (1 $\mu m$ Mylar), (b) dust protection spacer, (c) front stator, (d) front spacer (conductive only on the side that faces the membrane), (e) diaphragm (3 $\mu m$ Mylar), (f) back spacer, (g) back stator
+    }
+    \label{f:driver:schematic}
+\end{figure}
 
-Etching is achieved by using 2 parts Hydrogen Peroxide (3\%) with 1 part Hydrochloric acid (30\%). Most PCBs have a photosensitive coating that needs to be removed for this to work. The etching can be achieved by using a paintbrush to apply the solution to the desired location. The copper will be taken away rather quickly and the solution will turn greenish.
+It makes sense to etch away the copper at the edge of the stators too, because having less copper surface will result in a reduced capacitance and they will be easier to drive. Fig. \ref{f:etching:stator} shows the areas of the stators that can be etched away. Be sure to leave a conductive area for soldering the cable!
 
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/etching_stator_spacer.pdf}
+    \caption{Copper-layered areas of front stator and spacer. The rim of the stator is etched, leaving only a spot for cable connection}
+    \label{f:etching:stator}
+\end{figure}
+
+Many DIY etching projects use ferric chloride as etching compound. A more elegant and easier-to-come-by solution is making cupric chloride, using the copper that is etched away in the process itself as etchant\footnote{\url{http://www.instructables.com/id/Stop-using-Ferric-Chloride-etchant!--A-better-etc/}}. For starters you'll need an acidic solution of hydrochloric acid (also called "pool acid") solved in hydrogen peroxide . Those two chemicals can be easily and cheaply purchased in a drug store or hardware store. The initial acidic solution is made by adding 1 part of hydrochloric acid (30\%) to 2 parts of hydrogen peroxide (3\%) in a \textbf {non-metallic} container. Be careful to do it in that order - first the hydrogen peroxide, then add the acid!
+
+With the copper added from the PCBs during the etching process, this etchant can be re-used almost indefinitely when supplied with enough oxygen. Theoretically this can bubble in from the atmosphere when you give it a good whirl (provided enough acid is left in the compound), but practically we found that it is much more effective to add some fresh hydrogen peroxide when the solution turns dark green to brown. When the etching still is very slow (should't take more than 3-5 minutes for the parts submerged in the acid) you need to add more hydrochloric acid, always maintaining a 2:1 relation between hydrogen peroxide and acid.
+\\
+\begin {center}
+*** IMPORTANT NOTICE ***
+\end {center}
+Dont't pour the etchant down the drain. The cupric chloride is an environmental poison and needs to be disposed at a hazardous waste facility. The whole point of using the cupric chloride solution is that you are able to re-use the stuff many times before you have to throw it away. Because over time you have to add acid and hydrogen peroxide to maintain the etching capacity, it will eventually be to much to keep and you have to dispose of some of it. Please do so responsibly!
+\\See \url{http://www.instructables.com/id/Stop-using-Ferric-Chloride-etchant!--A-better-etc/} for more details on what goes on chemically and how you can 'recharge' your etchant.
 \subsection{Tensioning the Mylar diaphragm}
 \label{s:driver:tension}
 Mylar with 3 $\mu m$ thickness is used to create the diaphragm. Thinner Mylar will cause a lack of bass, while thicker one will cause problem in treble and mids. The tensioning should be high enough as otherwise the diaphragm will collapse onto a stator, loosing its charge, but also low enough in order to not reduced the bass. Two different ways of tensioning the Mylar were established in the head-fi thread.
@@ -268,7 +291,7 @@ In our case we simply bought a anti-static spray for computer monitors, which wo
 Diyaudio.com also has a thread about coating\footnote{\url{http://www.diyaudio.com/forums/planars-exotics/109789-esl-diaphragm-coating.html}}.
 
 \subsection{Cable}
-The cable that connects the headphone with the step up transformer consists of three about 3m long litz wires ($0.14mm^2$)that were braided together. One side was soldered directly onto the stators and one spacer whereas the other side was fitted with banana plugs to connect the headphones to the transformer.
+The cable that connects the headphone with the step up transformer consists of three about 3m long litz wires ($0.14mm^2$) that were braided together. One side was soldered directly onto the stators and one spacer whereas the other side was fitted with banana plugs to connect the headphones to the transformer.
 
 While this might not be the perfect solution in terms of elegance and signal transmission it was a inexpensive and functional way to make the headphones sing.
 
@@ -280,13 +303,17 @@ Alternatives include replacement cables for KOSS headphones. Apparently an exten
 %    \item Connector building: need 6 pins ideally (3 for each side, for front and rear stator as well as one for the diaphragm DC voltage)
 %\end{enumerate}
 
-\subsection{Assembly}
+\subsection{Driver assembly}
 \label{s:driver:assembly}
 Before assembling the driver a dust protector needs to be built using the 1 mm spacer made from FR4 and a 1 $\mu m$ Mylar film. The Mylar is crumpled by hand and then slightly stretched using masking tape on a flat surface. We then follow the same procedure as for the diaphragm, i.e. putting glue on both the spacer and the Mylar, letting it dry and then pressing the two firmly together. The crumpling of the Mylar should ensure that this film is acoustically transparent but keeps dust out of the driver. The slight stretching is needed so that it doesn't touch the spacer. The dust protection is only between the ear and the driver as the coated side of the diaphragm is also towards the ear. Because of this, no dust protection is required on the outside.
 
 As we chose to have no connector directly at the headphone, we soldered the cables directly onto the two stators and the 0.5 mm front spacer without the diaphragm. Then the conducting side of the two stators was sprayed with (in our case black) acrylic spray to insulate them. This avoids arching once the stators and diaphragm are charged.
 
-Afterwards the driver can be assembled. See Fig. \ref{f:driver:assembly:arrangement} for a visual representation of the arrangement of the different parts. The part furthest away from the ear is the stator with negative wire with the acrylic covered copper side pointing towards the ear. This is followed by the spacer with the diaphragm where the side with the diaphragm and the coating points towards the ear. Next, the front spacer is added with its copper side pointed away from the ear so that an electric connection between the diaphragm and the front spacer with the cable is made. The remaining stator is then placed onto the spacer with the acrylic covered copper side pointing away from the ear. Finally, the dust spacer is placed on the assembly with the crumpled Mylar pointing towards the ear to complete the driver.
+Afterwards the driver can be assembled. See Fig. \ref{f:driver:assembly:arrangement} and Fig. \ref{f:driver:assembly:arrangement}
+
+
+
+for a visual representation of the arrangement of the different parts. The part furthest away from the ear is the stator with negative wire with the acrylic covered copper side pointing towards the ear. This is followed by the back spacer with the diaphragm where the side with the diaphragm and the coating points towards the ear. Next, the front spacer is added with its copper side pointed away from the ear so that an electric connection between the diaphragm and the front spacer with the cable is made. The remaining stator is then placed onto the spacer with the acrylic covered copper side pointing away from the ear. Finally, the dust spacer is placed on the assembly with the crumpled Mylar pointing towards the ear to complete the driver.
 
 \begin{figure}[htb]
     \centering
@@ -342,19 +369,11 @@ All three wooden components of the enclosure can be seen in Fig. \ref{f:enclosur
 
 The front enclosure is fairly straightforward and is machined from 4 mm thick wood. It's main task is to keep the driver inside the back enclosure. Again, because we machined it to perfect precision we needed to do quite a bit of sanding to eventually get it to fit. Since we are machining wood, the mill actually compresses the wood and a perfect fit is not attainable.
 
-Finally, the last part is the pad ring. This ring will sit inside the ear pad and we use it to glue the leather of the pad onto it and provide screw holes for the connection with the enclosure.
+Finally, the last part is the pad ring. This ring will sit inside the ear pad and we use it to glue the leather of the pad onto it and provide screw holes for the connection with the enclosure. (see Fig. \ref{f:driver:assembly:arrangement})
 
 After milling these components for each side, we sanded them down to make sure that they fit together and get a smooth finish. We assembled the three parts together and used a 2 mm drill to create four screw holes (as noted above, through the blue circles in the back encasing). Additional holes where drilled into the side of the back enclosure to accommodate the wires from the headband, see below. We then applied some transparent wood glaze and let the pieces dry. Unfortunately, the glaze was quite thick, so it did not look very clean. For the next iteration we will probably use a different finish (e.g. wax or oil).
 
 % Wooden enclosures are potentially problematic as they can attract moisture which can cause electrical leakage. Sennheiser uses varnish on the outside of their wooden cups but none on the inside. It is possible to use a plastic O-ring to avoid direct contact between the wood and the driver.
-
-\section{Building the headband}
-\label{s:headband}
-TODO-BB
-
-\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/675#post_8943826}
-
-Headband can be made out of a metal ruler and then covered with leather \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/2385#post_13037825}.
 
 \section{Building the earpads}
 \label{s:pads}
@@ -384,17 +403,47 @@ The leather cover is made from a thin and stretchy synthetic leather. It's made 
 %\end{enumerate}
 %Post on ear pads: \url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/660#post_8930271}. Inner diameter of Orpheus earpads is 45mm x 90mm.
 
-\section{Assembly}
+\section{Building the headband}
+\label{s:headband}
+Of course, the easiest way to get your drivers mounted to your head would be modifying or using a spare headband from a commercial headphone. But where's the fun of that? So in the DIY spirit, we decided to build the headband ourselves.
+Our design consists of three parts: 
+\begin{enumerate}
+\item A metallic frame keeping the drivers pressed against your ear
+\item A soft band resting on top of your head
+\item Wooden parts for making the headband adjustable
+\end{enumerate}
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/headband_frame.jpg}
+    \caption{The components of the headband}
+    \label{f:headband:frame}
+\end{figure}
+The metallic frame is made from two 3 mm welding rods that were bent into shape manually and with pliers for the sharp bends. First you need to take the measurements for the length of the rods using your enclosure and leaving about 10 cm of headroom above your head. The whole frame is formed slightly inwards to get some tension against your ears when you put on your headphones. 
+
+Before you bend the frame outwards for the enclosure, mount two pieces of wood (about 6 x 3 x 1 cm) with 3 mm holes drilled through. The distance between the holes depends on your aesthetic preferences. We used about 2.5 cm. 
+The ends of the metal rods need to be put into the sides of the enclosure as shown in Fig. \ref{f:headband:frame}. For that you'll also need to drill 3 mm wide holes into the sides of the back enclosure.
+
+Finally, the soft headband is made from the same acoustic foam used for the earpads. To determine the length needed, finish bending the metal frame into shape and mount the back enclosure. Move the wooden pieces on both sides as close towards the bottom as possible. Put the frame on your head and measure the distance from the top edge of one wooden piece to the other, so the headband can sit comfortably atop your head.
+
+
+Now cut this measured length of foam and add 6-8 cm to determine the length of the artificial leather you'll need. Either stitch or glue the leather around the foam, leaving 3-4 cm on each side. This  surplus leather will be screwed (our glued) to the wooden pieces mounted on your frame (see Fig. \ref{f:assembly:phones}). After fixing the headband to your frame you can cut off any excessive artificial leather at the ends.
+
+
+This is the design that we used, and it worked quite well, although bending the metal rods into shape proved to be quite difficult. Feel free to try your own ideas and designs for the headband. If you want to share your idea with us, just contact us and tell us about it! Here's a quick reference to another method for building the headband
+\footnote{\url{http://www.head-fi.org/t/498292/my-diy-electrostatic-headphones/675#post_8943826}}.
+
+
+\section{Headphone assembly}
 \label{s:assembly}
 
-At this time pretty much everything is ready for assembly. We only made one small additional change to the back enclosure which consisted of adding a plastic net to the outside so that it was not possible to directly touch the driver. We attempted to do this by stapling the net to the inner, 4 mm high side wall, but this was quite a fiddly task. For our next iteration we will probably think about this issue beforehand to make sure that this will look smoother and is easier to assemble.
+At this point pretty much everything is ready for assembly. We only made one small additional change to the back enclosure which consisted of adding a plastic net to the outside so that it was not possible to directly touch the driver. We attempted to do this by stapling the net to the inner, 4 mm high side wall, but this was quite a fiddly task. For our next iteration we will probably think about this issue beforehand to make sure that this will look smoother and is easier to assemble.
 
-After the back enclosure was ready, we inserted the driver. This is done in the following order:
+After the back enclosure was ready, we inserted the driver. This is done in the following order (see also Fig. \ref{f:driver:assembly:arrangement}):
 
 \begin{enumerate}
 \item Stator with acrylic (copper) side pointing towards the ear
 \item 0.5 mm spacer with membrane, which is pointing towards the ear
-\item 0.5 mm Spacer with the cable and conducting copper side, which should be pointing away from the ear
+\item 0.5 mm spacer with the cable and conducting copper side, which should be pointing away from the ear
 \item Stator with acrylic (copper) side pointing away from the ear
 \item 1 mm spacer with crumpled membrane, which is pointing towards the ear
 \end{enumerate}
